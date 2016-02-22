@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20160222194352) do
   create_table "children", force: :cascade do |t|
     t.string   "name"
     t.string   "last_name"
-    t.string   "sex"
+    t.string   "gender"
     t.integer  "room_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
