@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 seed_users = [
-  {name: "Lucy", last_name: "Moulan", email: "Lucy@gmail.com", room_id: 1},
-  {name: "Dora", last_name: "Moulan", email: "Dora@gmail.com", room_id: 2}
+  {name: "Lucy", last_name: "Moulan", email: "misstamar@gmail.com", room_id: 1},
+  {name: "Dora", last_name: "Moulan", email: "misstamar@gmail.com", room_id: 2}
 ]
 seed_users.each do |teacher|
   User.create(teacher)

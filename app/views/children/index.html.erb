@@ -1,0 +1,5 @@
+<h1>All children</h1>
+
+<%= @children.each do |child| %>
+  <%= link_to child.name, welcome_email_path(child.id) %>
+<% end %>
