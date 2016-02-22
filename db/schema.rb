@@ -18,8 +18,15 @@ ActiveRecord::Schema.define(version: 20160222194352) do
     t.string   "last_name"
     t.string   "gender"
     t.integer  "room_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "parent1_number"
+    t.string   "parent2_number"
+    t.string   "medications_sensitivity"
+    t.string   "city"
+    t.string   "address"
+    t.datetime "dob"
+    t.integer  "ssn"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "rooms", force: :cascade do |t|
