@@ -8,4 +8,10 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def welcome
+    email = "misstamar@gmail.com"
+    WelcomeMailer.welcome(email).deliver
+    redirect_to :back
+  end
+
 end

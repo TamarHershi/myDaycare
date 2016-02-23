@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   root 'welcome#index'
+  post '/users' => 'users#welcome', as: :welcome
   resources :users do
     resources :children do
     end
   end
 
-  resources :children 
+  resources :children
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
