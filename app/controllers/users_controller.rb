@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def welcome
-    email = "misstamar@gmail.com"
+    email = "misshershi@gmail.com"
     WelcomeMailer.welcome(email).deliver
     redirect_to :back
   end
