@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   root 'welcome#index'
+  get "/auth/google_oauth2/callback", to: "sessions#create"
   post '/users' => 'users#welcome', as: :welcome
   resources :users do
     resources :children do
     end
   end
-  get "/auth/:provider/callback", to: "sessions#create"
   resources :children
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
