@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   belongs_to :room
 
   def self.find_or_create_from_omniauth(auth_hash)
+   user.url = auth_hash['info']['urls'][user.provider.capitalize]
    user = self.find_by(uid: auth_hash["uid"])
    if !user.nil?
      # User found continue on with your life
