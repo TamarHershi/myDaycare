@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def welcome
     email = "misshershi@gmail.com"
-    WelcomeMailer.welcome(email).deliver
+    WelcomeMailer.welcome(email).deliver_now
     redirect_to :back
   end
 
