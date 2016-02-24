@@ -8,7 +8,8 @@
 
 seed_users = [
   {name: "Lucy", last_name: "Moulan", email: "misstamar@gmail.com", room_id: 1},
-  {name: "Dora", last_name: "Moulan", email: "misstamar@gmail.com", room_id: 2}
+  {name: "Dora", last_name: "Moulan", email: "misstamar@gmail.com", room_id: 2},
+  {name: "Tammy", last_name: "Hershenbaum", email: "misshersho@gmail.com", room_id: 2}
 ]
 seed_users.each do |teacher|
   User.create(teacher)

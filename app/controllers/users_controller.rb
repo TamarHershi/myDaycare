@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = @current_user
-    raise
+    @children = @user.children
   end
 
   def index

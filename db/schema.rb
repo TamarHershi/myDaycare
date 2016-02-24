@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20160224174639) do
     t.string   "city"
     t.string   "address"
     t.datetime "dob"
+    t.integer  "ssn"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
