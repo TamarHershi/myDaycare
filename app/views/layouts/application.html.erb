@@ -17,6 +17,12 @@
           <h1> <%=link_to "My DayCare", root_path %> <small> Communication with Parents </small></h1>
         </div>
       </div>
+      <% if !flash.empty? %>
+        <div class="flash">
+          <% flash.each do |key, value| %><%= value %>
+          <% end %>
+        </div>
+      <% end %>
       <%= render 'navbar' %>
       <%= yield %>
 
