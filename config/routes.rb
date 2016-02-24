@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post '/users' => 'users#welcome', as: :welcome
   resources :users do
     resources :children do
+      resources :infos
     end
   end
   resources :children

@@ -1,5 +1,9 @@
 <h1> Welcome page </h1>
-
+<% if @current_user %>
+  <%= Hey @current_user.name %>
+<% else %>
+  <h3>Please Sign in</h3>
+<% end %>
 <p>
   <%= button_to "Send Welcome email", welcome_path %>
   <li><%= link_to 'Google+', '/auth/google' %></li>
