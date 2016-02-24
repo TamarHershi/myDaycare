@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   def require_login
     unless current_user
       flash[:error] = "Please log in"
-      redirect_to root_path
+      redirect_to new_session_path
     end
   end
 

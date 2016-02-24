@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
   # get "/auth/google_oauth2/callback", to: "sessions#create"
   get "/auth/:provider/callback", to: "sessions#create"
+  delete "/logout" => "sessions#destroy", as: :logout
+  resources :sessions, except: [:update, :destroy]
   post '/users' => 'users#welcome', as: :welcome
   resources :users do
     resources :children do
