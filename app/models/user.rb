@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   belongs_to :room
 
   def self.find_or_create_from_omniauth(auth_hash)
-   user = self.find_by(uid: auth_hash["uid"])
+   user = self.find_by(email: auth_hash['info']['email'])
   # user.url = auth_hash['info']['urls'][user.provider.capitalize]
    if !user.nil?
      # User found continue on with your life
@@ -11,10 +11,10 @@ class User < ActiveRecord::Base
    else
      # Create a new user
      user = User.new
-     user.uid        = auth_hash["uid"]
-     user.provider   = auth_hash["provider"]
+     user.email        = auth_hash['info']['email']
+#     user.provider   = auth_hash["provider"]
      user.name   = auth_hash["info"]["name"]
-     user.email      = auth_hash["info"]["email"]
+  #   user.last_name      = auth_hash["info"]["last_name"]
      if user.save
        return user
      else
