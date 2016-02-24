@@ -11,7 +11,7 @@ class CreateChildren < ActiveRecord::Migration
       t.string :city
       t.string :address
       t.datetime :dob
-      t.integer :ssn
+      t.boolean :attend, :default => false
 
       t.timestamps null: false
     end

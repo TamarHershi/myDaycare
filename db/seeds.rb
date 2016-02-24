@@ -34,6 +34,10 @@ seed_children.each do |child|
   Child.create(child)
 end
 
-2.times do
-  Room.create
+seed_rooms = [
+  {name: "Rainbow"},
+  {name: "Sunshine"}
+]
+seed_rooms.each do |room|
+  Room.create(room)
 end
