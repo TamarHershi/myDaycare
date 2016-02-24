@@ -6,12 +6,13 @@ class InfosController < ApplicationController
 
   def update
     @child = Child.find(params[:child_id])
-    today = DateTime.now
-    @info = Info.find_by(created_at: today)
-    raise
+    @info = @child.infos.last
   end
 
   def new
+    room = @current_user.class
+    Info.new_infos(room)
+    redirect_to user_children_path(@current_user.id)
   end
 
   def create
