@@ -13,14 +13,15 @@ class InfosController < ApplicationController
 
   def edit
     @child = Child.find(params[:child_id])
-    @info = @child.infos.last
+    @info = Info.find(params[:info_id])
+    @user = @current_user
   end
 
 
-  def new
+  def new_forms
     room = @current_user.class
     Info.new_infos(room)
-    redirect_to user_children_path(@current_user.id)
+    redirect_to root_path
   end
 
   def create
