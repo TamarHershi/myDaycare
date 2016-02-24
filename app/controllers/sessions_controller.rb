@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  # before_action :require_login, except: [:new, :create]
+  before_action :require_login, except: [:new, :create]
   # skip_before_filter :verify_authenticity_token, only: [:create]
 
   def new
@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
        session[:user_id] = @user.id
        redirect_to root_path, notice: "Welcome to My DayCare!"
      else
-       redirect_to root_path, notice: "Failed to save the user."
+       redirect_to new_session_path, notice: "Failed to save the user."
      end
    else
      redirect_to root_path, notice: "Failed to authenticate."
