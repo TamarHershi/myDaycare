@@ -10,7 +10,6 @@ class Info < ActiveRecord::Base
       info.child_id = child.id
       info.diaper_m = "Wet"
       info.save
-      binding.pry
     end
   end
 
