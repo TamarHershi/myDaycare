@@ -4,8 +4,8 @@ class InfosController < ApplicationController
   end
 
   def update
-    @child = Child.find(params[:child_id])
-    @info = @child.infos.last
+    @info = Info.find(params[:id])
+    @child = Child.find(@info.child.id)
 
     @info.update(info_params[:info])
     redirect_to user_children_path(@current_user.id)

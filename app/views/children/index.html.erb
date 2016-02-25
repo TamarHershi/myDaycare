@@ -3,8 +3,7 @@
 <% @children.each do |child| %>
   <%= link_to child.name, child_path(child.id) %>
   <% info = child.infos.last %>
-  <p> morning diaper <%= info.diaper_m %> </p>
-  <br>
+  <p> morning diaper:  <%= info.diaper_m %> </p>
   <%= link_to "Edit info", edit_user_child_info_path(@user.id, child.id, info.id) %>
   <br>
 <% end %>
