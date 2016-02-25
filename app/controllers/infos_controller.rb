@@ -30,7 +30,7 @@ class InfosController < ApplicationController
   private
 
   def info_params
-    params.permit(info: [:diaper_m])
+    params.permit(info: [:diaper_m, :diaper_a, :diaper_n, :breakfast, :lunch, :afternoon])
   end
 
 end

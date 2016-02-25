@@ -1,14 +1,78 @@
 <%= form_for @info, :html => {:class => "form-group" } do |f| %>
-
+<h3> Diapers</h3>
   <div class="field">
-    <%= f.label 'Morning Diaper' %>
+    <%= f.label 'Morning' %>
     <br>
       <%= f.label 'Wet' %>
       <%= f.radio_button :diaper_m, 'Wet', checked: true %>
       <%= f.label 'Dry' %>
       <%= f.radio_button :diaper_m, 'dry' %>
+      <%= f.label 'BM' %>
+      <%= f.radio_button :diaper_m, 'bm' %>
   </div>
   <br>
+  <div class="field">
+    <%= f.label 'Noon' %>
+    <br>
+      <%= f.label 'Wet' %>
+      <%= f.radio_button :diaper_n, 'Wet', checked: true %>
+      <%= f.label 'Dry' %>
+      <%= f.radio_button :diaper_n, 'dry' %>
+      <%= f.label 'BM' %>
+      <%= f.radio_button :diaper_n, 'bm' %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label 'After Noon' %>
+    <br>
+      <%= f.label 'Wet' %>
+      <%= f.radio_button :diaper_a, 'Wet', checked: true %>
+      <%= f.label 'Dry' %>
+      <%= f.radio_button :diaper_a, 'dry' %>
+      <%= f.label 'BM' %>
+      <%= f.radio_button :diaper_a, 'bm' %>
+  </div>
+  <br>
+  <h3> Food</h3>
+    <div class="field">
+      <%= f.label 'Breakfast' %>
+      <br>
+        <%= f.label 'None' %>
+        <%= f.radio_button :breakfast, 'none', checked: true %>
+        <%= f.label 'Little' %>
+        <%= f.radio_button :breakfast, 'little' %>
+        <%= f.label 'Most' %>
+        <%= f.radio_button :breakfast, 'most' %>
+        <%= f.label 'All' %>
+        <%= f.radio_button :breakfast, 'all' %>
+    </div>
+    <br>
+    <div class="field">
+      <%= f.label 'Lunch' %>
+      <br>
+        <%= f.label 'None' %>
+        <%= f.radio_button :lunch, 'none', checked: true %>
+        <%= f.label 'Little' %>
+        <%= f.radio_button :lunch, 'little' %>
+        <%= f.label 'Most' %>
+        <%= f.radio_button :lunch, 'most' %>
+        <%= f.label 'All' %>
+        <%= f.radio_button :lunch, 'all' %>
+    </div>
+    <br>
+    <div class="field">
+      <%= f.label 'After noon' %>
+      <br>
+        <%= f.label 'None' %>
+        <%= f.radio_button :afternoon, 'none', checked: true %>
+        <%= f.label 'Little' %>
+        <%= f.radio_button :afternoon, 'little' %>
+        <%= f.label 'Most' %>
+        <%= f.radio_button :afternoon, 'most' %>
+        <%= f.label 'All' %>
+        <%= f.radio_button :afternoon, 'all' %>
+    </div>
+    <br>
       <%= f.submit value: "Add info", class: "btn btn-primary" %>
 
 <% end %>
