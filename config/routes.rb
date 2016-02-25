@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   # get "/auth/google_oauth2/callback", to: "sessions#create"
   get "/auth/:provider/callback", to: "sessions#create"
   delete "/logout" => "sessions#destroy", as: :logout
+  post '/infos' => "infos#new_forms", as: :new_forms
   resources :sessions, except: [:update, :destroy]
   resources :infos, except: [:destroy]
-  post '/infos' => "infos#new_forms", as: :new_forms
   post '/users' => 'users#welcome', as: :welcome
   resources :users do
     resources :children do
