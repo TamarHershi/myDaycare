@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20160224174639) do
   create_table "children", force: :cascade do |t|
     t.string   "name"
     t.string   "last_name"
+    t.string   "parents_names"
     t.string   "gender"
     t.integer  "room_id"
     t.string   "parent1_number"

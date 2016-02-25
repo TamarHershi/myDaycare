@@ -3,6 +3,7 @@ class CreateChildren < ActiveRecord::Migration
     create_table :children do |t|
       t.string :name
       t.string :last_name
+      t.string :parents_names
       t.string :gender
       t.integer :room_id
       t.string :parent1_number

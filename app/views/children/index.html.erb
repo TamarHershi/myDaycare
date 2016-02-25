@@ -3,14 +3,16 @@
 <% @children.each do |child| %>
   <%= link_to child.name, child_path(child.id) %>
   <% info = child.infos.last %>
-  <p> morning diaper:  <%= info.diaper_m %> </p>
-  <% if child.infos.last.more_daiper %>
+  <% if info.diapers_m %>
+    <p> morning diaper:  <%= info.diaper_m %> </p>
+  <% end %>
+  <% if child.info.more_daiper %>
     <p> <%= child.name %> needs more diapers </p>
   <% end %>
-  <% if child.infos.last.more_wipes %>
+  <% if child.info.more_wipes %>
     <p> <%= child.name %> needs more wipes </p>
   <% end %>
-  <% if child.infos.last.more_clothes %>
+  <% if child.info.more_clothes %>
     <p> <%= child.name %> needs more clothes </p>
   <% end %>
   <%= link_to "Edit info", edit_user_child_info_path(@user.id, child.id, info.id) %>

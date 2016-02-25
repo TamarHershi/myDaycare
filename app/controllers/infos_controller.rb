@@ -24,8 +24,6 @@ class InfosController < ApplicationController
     redirect_to root_path
   end
 
-  def create
-  end
 
   private
 
