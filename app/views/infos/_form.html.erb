@@ -81,8 +81,12 @@
     <br>
 
     <div class="field">
-      <%= f.label "More diapres" %> <br />
-      <%= f.check_box :more_daiper %> <br />
+        <%= f.label "More diapres" %>
+        <%= f.check_box :more_daiper %>
+        <%= f.label "More Wipes" %>
+        <%= f.check_box :more_wipes %>
+        <%= f.label "More Clothes" %>
+        <%= f.check_box :more_clothes %>
     </div>
       <%= f.submit value: "Add info", class: "btn btn-primary" %>
 
