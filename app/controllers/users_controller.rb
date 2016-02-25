@@ -8,8 +8,6 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-
-
   def welcome
     email = "misshershi@gmail.com"
     WelcomeMailer.welcome(email).deliver_now
