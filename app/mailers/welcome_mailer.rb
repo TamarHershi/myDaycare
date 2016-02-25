@@ -4,7 +4,6 @@ class WelcomeMailer < ActionMailer::Base
     mail(to: email,
         from: "misstamar@gmail.com",
         subject: "Welcome",
-        body: "This is my first email"
         )
   end
 end
