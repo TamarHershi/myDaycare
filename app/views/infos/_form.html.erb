@@ -73,6 +73,17 @@
         <%= f.radio_button :afternoon, 'all' %>
     </div>
     <br>
+    <%= f.label "Sleep time" %>:
+    <%= f.text_field :sleep_time %><br />
+    <br>
+    <%= f.label "General Information" %>:
+    <%= f.text_field :general %><br />
+    <br>
+
+    <div class="field">
+      <%= f.label "More diapres" %> <br />
+      <%= f.check_box :more_daiper %> <br />
+    </div>
       <%= f.submit value: "Add info", class: "btn btn-primary" %>
 
 <% end %>
