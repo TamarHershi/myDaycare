@@ -13,7 +13,7 @@ class InfosController < ApplicationController
 
   def edit
     @child = Child.find(params[:child_id])
-    @info = Info.find(params[:info_id])
+    @info = Info.find(params[:id])
     @user = @current_user
   end
 
