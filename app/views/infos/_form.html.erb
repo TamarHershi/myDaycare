@@ -1,7 +1,5 @@
 <%= form_for @info, :html => {:class => "form-group" } do |f| %>
 
-
-
   <div class="field">
     <%= f.label 'Morning Diaper' %>
     <br>
@@ -9,7 +7,8 @@
       <%= f.radio_button :diaper_m, 'Wet', checked: true %>
       <%= f.label 'Dry' %>
       <%= f.radio_button :diaper_m, 'dry' %>
-      <!-- <= f.hidden_field :mom_id, value: @mom.id %> -->
-      <%= f.submit value: "Add info", class: "btn btn-primary" %>
   </div>
+  <br>
+      <%= f.submit value: "Add info", class: "btn btn-primary" %>
+
 <% end %>

@@ -6,7 +6,6 @@ class InfosController < ApplicationController
   def update
     @info = Info.find(params[:id])
     @child = Child.find(@info.child.id)
-
     @info.update(info_params[:info])
     redirect_to user_children_path(@current_user.id)
   end
@@ -14,6 +13,7 @@ class InfosController < ApplicationController
   def edit
     @child = Child.find(params[:child_id])
     @info = Info.find(params[:id])
+    @date = @info.created_at.strftime('%D')
     @user = @current_user
   end
 
