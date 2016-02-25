@@ -37,8 +37,7 @@ module MyDaycare
     #   :address              => "smtp.gmail.com",
     #   :port                 => 587,
     #   :domain               => "gmail.com",
-    #   :user_name            => "misshershi@gmail.com",
-    #   :password             => "Goola2412",
+
     #   :authentication       => 'login',
     #   :enable_starttls_auto => true
     # }
