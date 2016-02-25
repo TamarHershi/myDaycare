@@ -6,10 +6,13 @@ class Info < ActiveRecord::Base
   def self.new_infos(room)
     children = room.children
     children.each do |child|
-      info = Info.new
-      info.child_id = child.id
-      info.diaper_m = "Wet"
-      info.save
+      binding.pry
+      if child.infos.last.created_at.strftime('%D')!= DateTime.now.strftime('%D')
+        info = Info.new
+        info.child_id = child.id
+        info.diaper_m = "Wet"
+        info.save
+      end
     end
   end
 
