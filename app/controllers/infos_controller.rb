@@ -19,7 +19,7 @@ class InfosController < ApplicationController
 
 
   def new_forms
-    room = @current_user.class
+    room = @current_user.room
     Info.new_infos(room)
     redirect_to root_path
   end
