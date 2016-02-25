@@ -1,9 +1,22 @@
 <%= form_for @info, :html => {:class => "form-group" } do |f| %>
+
   <div class="field">
+    <%= f.label 'Morning Diaper' %>
+    <br>
+    <%= radio_button_tag(:diaper_m, "Wet") %>
+    <%= label_tag(:diaper_m, "Wet") %>
+    <%= radio_button_tag(:diaper_m, "Dry") %>
+    <%= label_tag(:diaper_m, "Dry") %>
+  </div>
 
-    <%= f.label :diaper_m %>
-    <%= f.text_field :diaper_m, class: 'form-control', :required => true %>
-
-    <%= f.submit value: "Add info", class: "btn btn-primary" %>
+  <div class="field">
+      <%= f.label 'Morning Diaper Wet' %>
+      <%= f.radio_button :diaper_m, 'Wet', checked: true %>
+      <br>
+      <%= f.label 'Morning Diaper Dry' %>
+      <%= f.radio_button :diaper_m, 'dry' %>
+      <br>
+      <!-- <= f.hidden_field :mom_id, value: @mom.id %> -->
+      <%= f.submit value: "Add info", class: "btn btn-primary" %>
   </div>
 <% end %>
