@@ -16,16 +16,16 @@ seed_users.each do |teacher|
 end
 
 seed_children = [
-  {name: "Michelle", last_name: "Mor", gender: "girl", room_id: 1, parent1_number: "425-247-5902",
+  {name: "Michelle", last_name: "Mor", attend: true, gender: "girl", room_id: 1, parent1_number: "425-247-5902",
   parent2_number: "425-247-5901", medications_sensitivity: "Advil", city: "Seattle",
   address: "12918 133rd pl NE", dob: 4/3/2012, parents_names: "Tammy and Guy", email: "misshershi@gmail.com"},
-  {name: "Luna", last_name: "Andy", gender: "boy", room_id: 2, parent1_number: "425-247-5902",
+  {name: "Luna", last_name: "Andy", attend: true, gender: "boy", room_id: 2, parent1_number: "425-247-5902",
   parent2_number: "425-247-5901", medications_sensitivity: "Tylanol", city: "Bellevue",
   address: "12918 133rd pl NE", dob: 5/6/2014, parents_names: "Boris and Brandon", email: "misshershi@gmail.com"},
-  {name: "Lana", last_name: "Dowl", gender: "girl", room_id: 1, parent1_number: "425-247-5902",
+  {name: "Lana", last_name: "Dowl", attend: true, gender: "girl", room_id: 1, parent1_number: "425-247-5902",
   parent2_number: "425-247-5901", medications_sensitivity: "", city: "Kirkland",
   address: "12918 133rd pl NE", dob: 8/14/2013, parents_names: "Boris and Brandon", email: "misshershi@gmail.com"},
-  {name: "Emily",last_name: "Mor",  gender: "girl", room_id: 2, parent1_number: "425-247-5902",
+  {name: "Emily",last_name: "Mor", gender: "girl", room_id: 2, parent1_number: "425-247-5902",
   parent2_number: "425-247-5901", medications_sensitivity: "none", city: "Woodinvlle",
   address: "12918 133rd pl NE", dob: 9/4/2012, parents_names: "Tammy and Guy", email: "misshershi@gmail.com"}
 ]

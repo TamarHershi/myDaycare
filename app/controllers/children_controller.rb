@@ -22,19 +22,23 @@ class ChildrenController < ApplicationController
   end
 
   def send_text_message
-    number_to_send_to = '+14252475902'
-    message = "hey"
+    # message = "(Check) Your Child is not in school"
     twilio_sid = ENV["TWILIO_ACCOUNT_SID"]
     twilio_token = ENV["TWILIO_AUTH_TOKEN"]
     twilio_phone_number = ENV["TWILIO_PHONE_NUMBER"]
 
-    @twilio_client = Twilio::REST::Client.new twilio_sid, twilio_token
+    children = @current_user.children
+    children.each do |child|
+      if !child.attend
+        @twilio_client = Twilio::REST::Client.new twilio_sid, twilio_token
+        @twilio_client.account.messages.create(
+          :from => twilio_phone_number,
+          :to => child.parent1_number,
+          :body => "Good morning " + child.parents_names + ", " + child.name + " is not in school"
+        )
 
-    @twilio_client.account.messages.create(
-      :from => twilio_phone_number,
-      :to => number_to_send_to,
-      :body => message
-    )
+      end
+    end
     redirect_to :back
   end
 
