@@ -11,7 +11,8 @@ class ChildrenController < ApplicationController
   end
 
   def send_emails
-    @children = Child.all
+    user = User.find(params[:user_id])
+    @children = user.children
     @children.each do |child|
       info = child.infos.last
       SendInfo.send_info(child.email, child, info).deliver_now

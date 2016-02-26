@@ -19,4 +19,4 @@
   <br>
 <% end %>
 
-<%= button_to "Send emails to parents", send_emails_path %>
+<%= button_to "Send emails to parents" ,send_emails_path, params: { user_id: @user.id }  %>
