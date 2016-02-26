@@ -17,10 +17,24 @@
 <br>
 <big>After-noon snack: </big> <%= @info.afternoon %>
 <br>
+
+<h3> Sleep time</h3>
+  <%= @info.sleep_time %>
+  <br>
+<h3> General Information </h3>
+  <%= @info.general %>
+<br>
  <% if @info.more_wipes || @info.more_daiper || @info.more_clothes %>
    <h3> Need more: </h3>
-    <%= puts "Diapers" if @info.more_daiper %>
+    <% if @info.more_daiper %>
+       <p>Diapers</p>
+    <% end %>
     <br>
-    <%= puts "Wipes" if @info.more_wipes %>
+    <% if @info.more_wipes %>
+      <p>Wipes</p>
+    <% end %>
     <br>
-    <%= puts "Clothes" if @info.more_clothes %>
+    <% if @info.more_clothes %>
+      <p>Clothes</p>
+    <% end %>
+  <% end %>
