@@ -8,4 +8,14 @@ class ChildrenController < ApplicationController
   def show
     @child = Child.find(params[:id])
   end
+
+  def send_emails
+    @children = Child.all
+    @children.each do |child|
+      info = child.infos.last
+      email = "misstamar@gmail.com"
+      WelcomeMailer.send_info(child.email, child, info)
+    end
+  end
+
 end
