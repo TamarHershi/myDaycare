@@ -24,4 +24,5 @@
   <br>
 <% end %>
 
+<%= button_to "Send SMS", send_text_message_path(@user.children.last) %>
 <%= button_to "Send emails to parents" ,send_emails_path, params: { user_id: @user.id }  %>

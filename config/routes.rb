@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   delete "/logout" => "sessions#destroy", as: :logout
   post '/infos' => "infos#new_forms", as: :new_forms
   post '/children' => "children#send_emails", as: :send_emails
+  post '/children/:id' => "children#send_text_message", as: :send_text_message
   resources :sessions, except: [:update, :destroy]
   resources :infos, except: [:destroy]
   post '/users' => 'users#welcome', as: :welcome
