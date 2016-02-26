@@ -18,3 +18,5 @@
   <%= link_to "Edit info", edit_user_child_info_path(@user.id, child.id, info.id) %>
   <br>
 <% end %>
+
+<%= button_to "Send emails to parents", send_emails_path %>

@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20160224174639) do
     t.string   "medications_sensitivity"
     t.string   "city"
     t.string   "address"
+    t.string   "email"
     t.datetime "dob"
     t.boolean  "attend",                  default: false
     t.datetime "created_at",                              null: false

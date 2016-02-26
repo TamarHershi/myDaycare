@@ -1,3 +1,4 @@
+require 'pry'
 class ChildrenController < ApplicationController
 
   def index
@@ -13,9 +14,9 @@ class ChildrenController < ApplicationController
     @children = Child.all
     @children.each do |child|
       info = child.infos.last
-      email = "misstamar@gmail.com"
-      WelcomeMailer.send_info(child.email, child, info)
+      SendInfo.send_info(child.email, child, info).deliver_now
     end
+    redirect_to :back
   end
 
 end

@@ -11,6 +11,7 @@ class CreateChildren < ActiveRecord::Migration
       t.string :medications_sensitivity
       t.string :city
       t.string :address
+      t.string :email
       t.datetime :dob
       t.boolean :attend, :default => false
 

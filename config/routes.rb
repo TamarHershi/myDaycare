@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "/auth/:provider/callback", to: "sessions#create"
   delete "/logout" => "sessions#destroy", as: :logout
   post '/infos' => "infos#new_forms", as: :new_forms
+  post '/children' => "children#send_emails", as: :send_emails
   resources :sessions, except: [:update, :destroy]
   resources :infos, except: [:destroy]
   post '/users' => 'users#welcome', as: :welcome
