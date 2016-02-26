@@ -1,7 +1,8 @@
 <h1> Hey <%= @user.name %> </h1>
 <h2><%= @user.room.name %> Class </h2>
+<br>
 <% @children.each do |child| %>
-  <%= link_to child.name, child_path(child.id) %>
+  <big><%= link_to child.name, child_path(child.id) %></big>
   <% info = child.infos.last %>
   <% if info.diaper_m %>
     <p> morning diaper:  <%= info.diaper_m %> </p>
@@ -15,7 +16,11 @@
   <% if info.more_clothes %>
     <p> <%= child.name %> needs more clothes </p>
   <% end %>
+  <br>
   <%= link_to "Edit info", edit_user_child_info_path(@user.id, child.id, info.id) %>
+  <br>
+  <br>
+  <br>
   <br>
 <% end %>
 

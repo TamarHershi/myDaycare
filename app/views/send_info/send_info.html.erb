@@ -1,1 +1,26 @@
-<h1>This is information about <%= @child.name %> </h1>
+<h2>Hey <%= @child.parents_names %>,</h2>
+<h2>Daily information about <big style= "color: blue"><%= @child.name %></big>:</h2>
+
+<h3> Diapers </h3>
+<big>Morning Diaper: </big> <%= @info.diaper_m %>
+<br>
+<big>Noon Diaper: </big> <%= @info.diaper_n %>
+<br>
+<big>After noon Diaper: </big> <%= @info.diaper_a %>
+<br>
+<br>
+<h3> Food </h3>
+
+<big>Breakfast: </big> <%= @info.breakfast%>
+<br>
+<big>Lunch: </big> <%= @info.lunch %>
+<br>
+<big>After-noon snack: </big> <%= @info.afternoon %>
+<br>
+ <% if @info.more_wipes || @info.more_daiper || @info.more_clothes %>
+   <h3> Need more: </h3>
+    <%= puts "Diapers" if @info.more_daiper %>
+    <br>
+    <%= puts "Wipes" if @info.more_wipes %>
+    <br>
+    <%= puts "Clothes" if @info.more_clothes %>

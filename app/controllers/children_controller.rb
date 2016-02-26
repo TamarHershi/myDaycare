@@ -12,11 +12,12 @@ class ChildrenController < ApplicationController
 
   def send_emails
     user = User.find(params[:user_id])
-    @children = user.children
-    @children.each do |child|
-      info = child.infos.last
-      SendInfo.send_info(child.email, child, info).deliver_now
-    end
+    # @children = user.children
+    # @children.each do |child|
+    #   SendInfo.send_info(child.email, child).deliver_now
+    # end
+    child = user.children.last
+    SendInfo.send_info(child.email, child).deliver_now
     redirect_to :back
   end
 

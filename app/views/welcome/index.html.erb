@@ -1,10 +1,8 @@
-<h1> Welcome page </h1>
-<% if @current_user %>
-  Hey <%= @current_user.name %>
-<% else %>
-  <h3>Please Sign in</h3>
-<% end %>
+<h1> Welcome <%= @current_user.name %></h1>
+<br>
+<br>
 <p>
   <%= button_to "Send Welcome email", welcome_path %>
+  <br>
   <%= button_to 'New Day', new_forms_path %>
 </p>

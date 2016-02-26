@@ -1,12 +1,12 @@
+require 'pry'
 class SendInfo < ActionMailer::Base
 
-  def send_info(email, child, info)
+  def send_info(email, child)
     @child = child
-    @info = info
-
+    @info = @child.infos.last
     mail(to: email,
         from: "misstamar@gmail.com",
-        subject: "MyDayCare daily information about #{child.name}",
+        subject: "☀︎ 'My DayCare' Daily information ☀︎",
         )
   end
 end
