@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
   root 'welcome#index'
   # get "/auth/google_oauth2/callback", to: "sessions#create"
+  resources :rooms, except: [:destroy, :update]
   get "/auth/:provider/callback", to: "sessions#create"
   delete "/logout" => "sessions#destroy", as: :logout
   post '/infos' => "infos#new_forms", as: :new_forms
-  post '/children' => "children#send_emails", as: :send_emails
+  post '/children/email' => "children#send_emails", as: :send_emails
   post '/children/sms' => "children#send_text_message", as: :send_text_message
   resources :sessions, except: [:update, :destroy]
   resources :infos, except: [:destroy]
-  resources :rooms, except: [:destroy, :update]
+
   post '/users' => 'users#welcome', as: :welcome
   resources :users do
     resources :children do
