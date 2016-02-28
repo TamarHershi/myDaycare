@@ -26,7 +26,7 @@ gem 'aws-sdk-rails', '~> 1.0'
 gem 'twilio-ruby', '~> 4.11.1'
 
 gem 'paperclip'
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 
 gem 'bcrypt'
 gem "omniauth"
