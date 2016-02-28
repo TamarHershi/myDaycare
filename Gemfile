@@ -25,6 +25,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'aws-sdk-rails', '~> 1.0'
 gem 'twilio-ruby', '~> 4.11.1'
 
+gem 'paperclip'
+gem 'aws-sdk'
+
 gem 'bcrypt'
 gem "omniauth"
 gem "omniauth-google-oauth2"
