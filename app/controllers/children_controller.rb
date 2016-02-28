@@ -3,7 +3,6 @@ class ChildrenController < ApplicationController
 
   def create
     @child = Child.create(child_params)
-
     if @child.save
       redirect_to @child, notice: 'Child was successfully created.'
      else
@@ -11,6 +10,9 @@ class ChildrenController < ApplicationController
     end
   end
 
+  def new
+    @child = Child.new
+  end
 
   def index
     @user = @current_user

@@ -1,8 +1,8 @@
 class RoomsController < ApplicationController
 
     def show
-      @child = Child.new
-      @room = Room.find(params[:room_id])
+      @user = @current_user
+      @room = Room.find(params[:id])
     end
 
     def index

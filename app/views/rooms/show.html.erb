@@ -1,2 +1,2 @@
 <%= @room.name %>
-<%= render "childern/form", :child => @child %>
+<%= link_to "Add a child", new_user_child_path(@user.id) %>
