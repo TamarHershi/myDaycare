@@ -23,6 +23,6 @@
   <br>
   <br>
 <% end %>
-
+<%= link_to "See class", room_path(@user.room) %>
 <%= button_to "Send SMS", send_text_message_path, params: { user_id: @user.id } %>
 <%= button_to "Send emails to parents" ,send_emails_path, params: { user_id: @user.id }  %>

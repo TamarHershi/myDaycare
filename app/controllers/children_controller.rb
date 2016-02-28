@@ -1,6 +1,17 @@
 require 'pry'
 class ChildrenController < ApplicationController
 
+  def create
+    @child = Child.create(child_params)
+
+    if @child.save
+      redirect_to @child, notice: 'Child was successfully created.'
+     else
+       render action: 'new'
+    end
+  end
+
+
   def index
     @user = @current_user
     @children = @user.children
@@ -34,12 +45,18 @@ class ChildrenController < ApplicationController
         @twilio_client.account.messages.create(
           :from => twilio_phone_number,
           :to => child.parent1_number,
-          :body => "Good morning " + child.parents_names + ", " + child.name + " is not in school"
+          :body => "Good Morning " + child.parents_names + ", " + child.name + " is not in school"
         )
 
       end
     end
     redirect_to :back
+  end
+
+  private
+
+  def child_params
+    params.require(:child).permit(:avatar, :name, :last_name, :parents_names, :gender)
   end
 
 end
