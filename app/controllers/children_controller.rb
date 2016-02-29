@@ -10,6 +10,20 @@ class ChildrenController < ApplicationController
     end
   end
 
+  def edit
+    @child = Child.find(params[:id])
+  end
+
+  def update
+    @child = Child.find(params[:id])
+    @child.assign_attributes(child_params)
+    if @child.save
+      redirect_to :back
+    else
+      render :edit
+    end
+  end
+
   def new
     @child = Child.new
   end
