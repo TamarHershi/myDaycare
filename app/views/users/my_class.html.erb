@@ -1,17 +1,21 @@
 <h1> Hey <%= @user.name %> </h1>
 <h2><%= @user.room.name %> Class </h2>
 <br>
-<% @children.each do |child| %>
-  <big><%= link_to child.name, child_path(child.id) %></big>
-  <% info = child.infos.last %>
+<div class="row">
+  <% @children.each do |child| %>
+    <div class="col-md-4">
+      <big><%= link_to child.name, child_path(child.id) %></big>
+      <% info = child.infos.last %>
+      <br>
+      <%= image_tag child.avatar.url(:square) %>
+      <%= link_to "Edit info", edit_user_child_info_path(@user.id, child.id, info.id) %>
+      <br>
+      <br>
+    </div>
+  <% end %>
+</div>
+  <%= link_to "See class", room_path(@user.room) %>
   <br>
-  <%= image_tag child.avatar.url(:square) %>
-  <%= link_to "Edit info", edit_user_child_info_path(@user.id, child.id, info.id) %>
-  <br>
-  <br>
-<% end %>
-<%= link_to "See class", room_path(@user.room) %>
-<br>
-<%= link_to "attendees", attendees_path(@user.id) %>
-<%= button_to "Send SMS", send_text_message_path, params: { user_id: @user.id } %>
-<%= button_to "Send emails to parents" ,send_emails_path, params: { user_id: @user.id }  %>
+  <%= link_to "attendees", attendees_path(@user.id) %>
+  <%= button_to "Send SMS", send_text_message_path, params: { user_id: @user.id } %>
+  <%= button_to "Send emails to parents" ,send_emails_path, params: { user_id: @user.id }  %>
