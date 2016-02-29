@@ -14,6 +14,18 @@ class ChildrenController < ApplicationController
     @child = Child.find(params[:id])
   end
 
+  def attend
+    @child = Child.find(params[:id])
+    if @child.attend
+      @child.attend = false
+    else
+      @child.attend = true
+    end
+    
+    @child.save
+    redirect_to :back
+  end
+
   def update
     @child = Child.find(params[:id])
     @child.assign_attributes(child_params)

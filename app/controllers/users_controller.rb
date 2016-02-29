@@ -1,7 +1,16 @@
 class UsersController < ApplicationController
 
   def show
+  end
 
+  def my_class
+    @user = @current_user
+    @children = @user.children
+  end
+
+  def attendees
+    @user = @current_user
+    @children = @user.children
   end
 
   def index
