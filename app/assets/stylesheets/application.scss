@@ -22,9 +22,16 @@
      // background-color: #cccccc;
  }
 
- .child-image {
+ .not-attend {
    border-radius: 52px 52px 52px 52px;
   -moz-border-radius: 52px 52px 52px 52px;
   -webkit-border-radius: 52px 52px 52px 52px;
   border: 19px solid #f50814;
+ }
+
+ .attend {
+   border-radius: 52px 52px 52px 52px;
+  -moz-border-radius: 52px 52px 52px 52px;
+  -webkit-border-radius: 52px 52px 52px 52px;
+  border: 19px solid green;
  }
