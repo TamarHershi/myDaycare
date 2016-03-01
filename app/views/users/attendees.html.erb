@@ -7,7 +7,7 @@
     <div class="col-md-4">
         <big><%= link_to child.name, child_path(child.id) %></big>
         <br>
-        <%= image_tag child.avatar.url(:square) %>
+        <%= image_tag child.avatar.url(:square) , :class => "child-image" %> 
         <% if !child.attend %>
           <%= button_to "Attend", attend_path(child.id) %>
         <% else %>
