@@ -15,19 +15,12 @@
 //= require turbolinks
 //= require_tree .
 
-var dayCare = function() {
-  this.child_attend = false;
-}
-
-  dayCare.prototype.checkAttendesee = function() {
-    attend = $('child-image');
-  }
 
 $(document).ready(function() {
 
   $('.child-image').click(function() {
-    this.removeClass("not-attend").addClass("attend");
-    console.log(game.board);
+    $(this).removeClass("not-attend").addClass("attend");
+    // console.log(game.board);
   });
 
 });

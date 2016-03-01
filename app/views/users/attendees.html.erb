@@ -8,9 +8,9 @@
         <big><%= link_to child.name, child_path(child.id) %></big>
         <br>
         <% if child.attend %>
-          <%= image_tag child.avatar.url(:square) , :class => "child-image", :class => "attend" %>
+          <%= image_tag child.avatar.url(:square) , :class => "child-image attend" %>
         <% else %>
-          <%= image_tag child.avatar.url(:square) , :class => "child-image", :class => "not-attend" %>
+          <%= image_tag child.avatar.url(:square) , :class => "child-image not-attend" %>
         <% end %>
         <% if !child.attend %>
           <%= button_to "Attend", attend_path(child.id) %>
