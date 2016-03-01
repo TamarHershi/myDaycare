@@ -14,3 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+
+  $('#restart').click(function() {
+    game.restart();
+    console.log(game.board);
+  });
+
+});
