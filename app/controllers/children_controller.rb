@@ -21,7 +21,7 @@ class ChildrenController < ApplicationController
     else
       @child.attend = true
     end
-    
+
     @child.save
     redirect_to :back
   end
