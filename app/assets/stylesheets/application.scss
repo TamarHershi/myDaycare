@@ -11,16 +11,22 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  */
+ @import url(https://fonts.googleapis.com/css?family=Rancho&effect=fire-animation);
+  @import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+  @import url(https://fonts.googleapis.com/css?family=Josefin+Sans);
+  @import url(https://fonts.googleapis.com/css?family=Gloria+Hallelujah);
+  @import url(https://fonts.googleapis.com/css?family=Alegreya+Sans);
+
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
- body {
-     background-image: url("heart-balloon");
-     background-size: 100%;
-
-     // background-color: #cccccc;
- }
+ // body {
+ //     background-image: url("heart-balloon");
+ //     background-size: 100%;
+ //
+ //     // background-color: #cccccc;
+ // }
 
  .not-attend {
    border-radius: 52px 52px 52px 52px;
@@ -46,11 +52,12 @@
  }
 
  .form_h2 {
-   font-style: david;
+   font-family: Indie Flower, serif;
    color: #ff4081;
  }
 
  .h3_form {
+   font-family: Indie Flower, serif;
    color: #333344;
  }
 
@@ -60,4 +67,9 @@
 
 #g_box {
   height: 200px;
+}
+
+.fire {
+  font-size: 50px;
+  text-align: center;
 }
