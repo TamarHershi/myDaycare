@@ -6,7 +6,15 @@
     <%= button_to "Send Welcome email", welcome_path %>
     <br>
     <%= button_to 'New Day', new_forms_path %>
-    <a class="btn btn-block btn-social btn-twitter">
-      <span class="fa fa-twitter"></span> Sign in with Twitter
-</a>
+    <a class="btn btn-social-icon btn-google">
+      <span class="fa fa-google"></span>
+    </a>
+      <a class="btn btn-block btn-social btn-google">
+        <span class="fa fa-google"></span> Sign in with Google
+      </a>
   </p>
+
+  <div class="social-wrap c">
+      <%= button_to "Sign in <em>w/</em> Google", '/auth/google', :class => "googleplus" , :method => 'GET' %>
+      <button class="googleplus">Sign in <em>w/</em> Google</button>
+  </div>

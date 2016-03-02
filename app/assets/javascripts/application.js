@@ -40,8 +40,29 @@ $(document).ready(function() {
         console.log("ALWAYS");
         //will always happen - fail or sucess
       });
+    });
 
+  // $('.googleplus').click(function(e) {
+  //   event.preventDefault();
+  //   var input = $(this);
+  //   console.log(input);
+  //   var url = '/auth/google'
+  //
+  //   $.ajax(url, {
+  //     type: "GET"
+  //   })
+  //     .done(function(data) {
+  //     console.log("Done!");
+  //      console.log(data);
+  //     })
+  //     .fail(function() {
+  //       console.log("FAIL");
+  //     })
+  //     .always(function() {
+  //       console.log("ALWAYS");
+  //       //will always happen - fail or sucess
+  //     });
+  //   });
 
-  });
 
 });
