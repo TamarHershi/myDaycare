@@ -35,6 +35,24 @@
  //     // background-color: #cccccc;
  // }
 
+ .background-image {
+     background-image: url("download");
+     background-size: 100%;
+     background-repeat: no-repeat;
+     height: 800px;
+     // background-color: #cccccc;
+ }
+
+#google {
+  width: 200px;
+  margin-left: 40%;
+}
+.session {
+  font-size: 70px;
+  margin-top: 180px;
+  margin-bottom: 50px;
+  text-align: center;
+}
  .not-attend {
    border-radius: 52px 52px 52px 52px;
   -moz-border-radius: 52px 52px 52px 52px;

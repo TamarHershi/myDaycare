@@ -8,9 +8,7 @@
   <%= csrf_meta_tags %>
 </head>
 
-
-
-
+<% if @current_user %>
   <body>
     <div class="container">
       <div class="row">
@@ -35,5 +33,13 @@
     </footer>
 
   </body>
+<% else %>
+  <body class="background-image">
+    <div>
+      <h1 style="font-family: 'Josefin Sans', serif;" class="session"> Welcome to My DayCare app" </h1>
+      <%= link_to image_tag("White.png", :id => "google") , '/auth/google'%>
+    </div>
+  </body>
+<% end %>
 </div>
 </html>
