@@ -18,9 +18,31 @@
 
 $(document).ready(function() {
 
-  $('.child-image').click(function() {
-    $(this).removeClass("not-attend").addClass("attend");
-    // console.log(game.board);
+  $('.child-image').click(function(e) {
+    event.preventDefault();
+    var input = $(this)
+    var link = $(this).closest(".col-md-4").find(".child-details a");
+    var url = link.attr("href") + "/attend";
+    console.log(url);
+
+    $.ajax(url, {
+      type: "POST"
+    })
+      .done(function(data) {
+      console.log("Done!");
+       console.log(data);
+       input.addClass('attend');
+      })
+      .fail(function() {
+        console.log("FAIL");
+        $(clubDiv).addClass('fails');
+      })
+      .always(function() {
+        console.log("ALWAYS");
+        //will always happen - fail or sucess
+      });
+
+
   });
 
 });

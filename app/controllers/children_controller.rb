@@ -23,7 +23,7 @@ class ChildrenController < ApplicationController
     end
 
     @child.save
-    redirect_to :back
+    render json: [], status: 200
   end
 
   def update
