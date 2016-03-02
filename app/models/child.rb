@@ -13,7 +13,12 @@ class Child < ActiveRecord::Base
   # Validate the attached image is image/jpg, image/png, etc
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
-
+  def self.not_attend(children)
+    children.each do |child|
+      child.attend = false
+      child.save
+    end
+  end
 
 
 

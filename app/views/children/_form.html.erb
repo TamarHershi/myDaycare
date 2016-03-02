@@ -16,15 +16,11 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :room_id %>
-    <%= f.text_field :room_id %>
-  </div>
-  <div class="field">
     <%= f.label :avatar %>
     <%= f.file_field :avatar %>
   </div>
   <div class="actions">
-    <%= f.submit 'Make a child' %>
-    <%= link_to 'Nevermind', children_path, class: 'button' %>
+    <%= f.submit 'Save the info' %>
+    <!-- <%= link_to 'Nevermind', children_path, class: 'button' %> -->
   </div>
 <% end %>
