@@ -4,7 +4,7 @@
 <div class="row">
   <% @children.each do |child| %>
     <div class="col-md-4">
-      <big><%= link_to child.name, child_path(child.id) %></big>
+      <div class= "child-name child-details"><%= link_to child.name, child_path(child.id) %></div>
       <% info = child.infos.last %>
       <br>
       <%= image_tag child.avatar.url(:square) %>

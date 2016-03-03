@@ -98,6 +98,13 @@
    color: #333344;
  }
 
+ .header-att {
+   font-family: Josefin Sans, serif;
+   color: #7D0552;
+   font-size: 50px;
+   text-align: center;
+ }
+
  .child-name {
    font-family: Indie Flower, serif;
    font-size: 20px;
@@ -293,6 +300,8 @@ ul.sm-wrap a{
         color: #f0f0f0;
         font-size: 1.6em;
         margin: 0 .5em;
+        font-family: Indie Flower, serif;
+
 }
 
 #navigation li a:hover {
@@ -305,7 +314,7 @@ ul.sm-wrap a{
 }
 
 .rectangle {
-   background: #e5592e;
+   background: #4863A0;
    height: 62px;
    position: relative;
    -moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
@@ -318,7 +327,7 @@ ul.sm-wrap a{
 }
 
 .l-triangle-top {
-   border-color: #d9542b transparent transparent;
+   border-color: #4863A0 transparent transparent;
    border-style:solid;
    border-width:50px;
    height:0px;
@@ -330,7 +339,7 @@ ul.sm-wrap a{
 }
 
 .l-triangle-bottom {
-   border-color: transparent transparent #d9542b;
+   border-color: transparent transparent #4863A0;
    border-style:solid;
    border-width:50px;
    height:0px;
@@ -341,8 +350,9 @@ ul.sm-wrap a{
    left: -150px;
 }
 
+
 .r-triangle-top {
-   border-color: #d9542b transparent transparent;
+   border-color: #4863A0 transparent transparent;
    border-style:solid;
    border-width:50px;
    height:0px;
@@ -354,31 +364,7 @@ ul.sm-wrap a{
 }
 
 .r-triangle-bottom {
-   border-color: transparent transparent #d9542b;
-   border-style:solid;
-   border-width:50px;
-   height:0px;
-   width:0px;
-   position: relative;
-   float: right;
-   top: -149px;
-   right: -145px;
-}
-
-.r-triangle-top {
-   border-color: #d9542b transparent transparent;
-   border-style:solid;
-   border-width:50px;
-   height:0px;
-   width:0px;
-   position: relative;
-   float: right;
-   right: -45px;
-   top: -107px;
-}
-
-.r-triangle-bottom {
-   border-color: transparent transparent #d9542b;
+   border-color: transparent transparent #4863A0;
    border-style:solid;
    border-width:50px;
    height:0px;
