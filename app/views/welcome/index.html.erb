@@ -1,9 +1,9 @@
 <div class="image">
 
-  <h1 class="header-red"><%= link_to "Welcome " + @current_user.name, root_path %></h1>
-  <br>
-  <br>
-  <p>
+  <!-- <h1 class="header-red"><%= link_to "Welcome " + @current_user.name, root_path %></h1>
+  <p> -->
+    <!-- <%= image_tag "299895_orig.jpg", :class => "image-welcome2" %> -->
+    <%= image_tag "Daycare_Clip-Art-1.jpg" , :class=> "image-welcome"%>
     <%= button_to "Send Welcome email", welcome_path %>
     <br>
     <%= button_to 'New Day', new_forms_path %>
