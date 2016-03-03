@@ -4,6 +4,7 @@ class InfosController < ApplicationController
   end
 
   def update
+
     @info = Info.find(params[:id])
     @child = Child.find(@info.child.id)
     @info.update(info_params[:info])
@@ -19,9 +20,15 @@ class InfosController < ApplicationController
 
 
   def new_forms
-    room = @current_user.room
-    Info.new_infos(room)
-    redirect_to root_path
+    if @current_user.children.last.infos.last.created_at.strftime('%D')!= DateTime.now.strftime('%D')
+      room = @current_user.room
+      Info.new_infos(room)
+      children = @current_user.children
+      Child.not_attend(children)
+      redirect_to root_path, notice: "Good morning #{@current_user.name}"
+    else
+      redirect_to root_path, notice: "You already pushed the button"
+    end
   end
 
 

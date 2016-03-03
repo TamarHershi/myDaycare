@@ -6,5 +6,7 @@
     <%= image_tag "Daycare_Clip-Art-1.jpg" , :class=> "image-welcome"%>
     <%= button_to "Send Welcome email", welcome_path %>
     <br>
+    <!-- this button do 2 things: 1. It will create new forms for all kids. 2. it will 
+    make all children be "not attend" -->
     <%= button_to 'New Day', new_forms_path %>
 </div>
