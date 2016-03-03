@@ -1,15 +1,17 @@
 <% if @current_user %>
-  <div id="headercss">
-    <div class="row">
-      <div class="navbar navbar-default">
-        <div class="navbar-left navbar-links">
-            <%= link_to "My class", my_class_path(@current_user.id) %>
-            <%= link_to "My Info", root_path %>
-            <%= link_to "Logout", logout_path, method: :delete %>
-        </div>
-      </div>
-    </div>
+<div id="navigation_container">
+  <div class="l-triangle-top"></div>
+  <div class="l-triangle-bottom"></div>
+  <div class="rectangle">
+    <ul id="navigation">
+      <li><%= link_to "My class", my_class_path(@current_user.id) %></li>
+      <li><%= link_to "My Info", root_path %></li>
+      <li><%= link_to "Logout", logout_path, method: :delete %></li>
+    </ul>
   </div>
-<% else %>
-    <li><%= link_to 'Google+', '/auth/google' %></li>
+
+  <div class="r-triangle-top"></div>
+  <div class="r-triangle-bottom"></div>
+</div>
+
 <% end %>
