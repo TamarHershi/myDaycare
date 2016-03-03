@@ -23,6 +23,14 @@ $(document).ready(function() {
     var link = $(this).closest(".col-md-4").find(".child-details a");
     var url = link.attr("href") + "/attend";
     console.log(url);
+    console.log(input.hasClass('attend'));
+    if (input.hasClass('attend') === true) {
+        classNameOne = "not-attend";
+        classNameTwo = "attend";
+    } else {
+      classNameOne = "attend";
+      classNameTwo = "not-attend";
+    }
 
     $.ajax(url, {
       type: "POST"
@@ -30,7 +38,8 @@ $(document).ready(function() {
       .done(function(data) {
       console.log("Done!");
        console.log(data);
-       input.addClass('attend');
+       input.removeClass(classNameTwo);
+       input.addClass(classNameOne);
       })
       .fail(function() {
         console.log("FAIL");
