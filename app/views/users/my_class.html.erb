@@ -5,8 +5,7 @@
       <div class= "child-name child-details"><%= link_to child.name, child_path(child.id) %></div>
       <% info = child.infos.last %>
       <br>
-      <%= image_tag child.avatar.url(:square), :class => "child-border" %>
-      <%= link_to "Edit info", edit_user_child_info_path(@user.id, child.id, info.id) %>
+      <%= link_to image_tag(child.avatar.url(:square), :class => "child-border"), child_path(child.id) %>
       <br>
       <br>
     </div>
