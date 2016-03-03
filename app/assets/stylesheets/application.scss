@@ -43,6 +43,11 @@
      // background-color: #cccccc;
  }
 
+ .header-red {
+   color: red;
+   text-align: center;
+ }
+
 #google {
   width: 200px;
   margin-left: 40%;
@@ -99,10 +104,12 @@
  }
 
  .header-att {
-   font-family: Josefin Sans, serif;
+   font-family: Gloria Hallelujah, serif;
    color: #7D0552;
    font-size: 50px;
    text-align: center;
+   margin-top: 60px;
+   margin-bottom: 70px;
  }
 
  .child-name {
@@ -336,6 +343,7 @@ ul.sm-wrap a{
    float: left;
    top: 1px;
    left: -50px;
+
 }
 
 .l-triangle-bottom {
@@ -361,6 +369,7 @@ ul.sm-wrap a{
    float: right;
    right: -45px;
    top: -107px;
+   //    right: -10px;
 }
 
 .r-triangle-bottom {

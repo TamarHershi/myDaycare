@@ -4,8 +4,9 @@
   <div class="l-triangle-bottom"></div>
   <div class="rectangle">
     <ul id="navigation">
+      <li><%= link_to "Tammy", root_path %></li>
       <li><%= link_to "My class", my_class_path(@current_user.id) %></li>
-      <li><%= link_to "My Info", root_path %></li>
+      <li><%= link_to "Attendance", attendees_path(@current_user.id) %></li>
       <li><%= link_to "Logout", logout_path, method: :delete %></li>
     </ul>
   </div>
