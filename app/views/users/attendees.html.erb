@@ -5,17 +5,12 @@
 <div class="row">
   <% @children.each do |child| %>
     <div class="col-md-4">
-        <div class="child-details"><%= link_to child.name, child_path(child.id) %></div>
+        <div class= "child-name child-details"><%= link_to child.name, child_path(child.id) %></div>
         <br>
         <% if child.attend %>
           <%= image_tag child.avatar.url(:square) , :class => "child-image attend" %>
         <% else %>
           <%= image_tag child.avatar.url(:square) , :class => "child-image not-attend" %>
-        <% end %>
-        <% if !child.attend %>
-          <%= button_to "Attend", attend_path(child.id) %>
-        <% else %>
-          <%= button_to "Not Attend", attend_path(child.id) %>
         <% end %>
         <br>
         <br>
