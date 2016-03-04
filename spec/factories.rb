@@ -7,4 +7,12 @@ FactoryGirl.define do
     email "test@test.com"
   end
 
+  factory :child, class: Child do
+    name "Ada"
+    last_name "Lovelace"
+    parents_names "Jone and Marry"
+    gender "girl"
+    email "ada@gmail.com"
+  end
+
 end
