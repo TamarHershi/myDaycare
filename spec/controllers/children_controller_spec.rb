@@ -26,7 +26,7 @@ RSpec.describe ChildrenController, type: :controller do
     context "it check attendance" do
       it "change the attend status from attend to not_attend" do
         post :attend, :id => child.id
-        expect(child.attend).to eq false
+        expect(child.reload.attend).to eq false
       end
       it "change the attend status from not_attend to attend"
       it "render empty json" do
@@ -49,8 +49,23 @@ RSpec.describe ChildrenController, type: :controller do
         expect(response).to redirect_to my_class_path(user.id)
       end
     end
-
   end
+
+  describe "PATCH 'update'" do
+    let (:child_params) {
+      { name: "name",
+        last_name: "last name",
+        email: "example@gmail.com"
+      }
+    }
+    context "it has valid information" do
+      it "redirect to the child show page" do
+        patch :update, :child => child_params , :user_id => user.id, :id => child.id
+        expect(subject).to redirect_to user_child_path(user.id, child.id)
+      end
+    end
+  end
+
 #
 #   describe "GET #index" do
 #   it "returns http success" do

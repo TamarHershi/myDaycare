@@ -30,7 +30,7 @@ class ChildrenController < ApplicationController
     @child = Child.find(params[:id])
     @child.assign_attributes(child_params)
     if @child.save
-      redirect_to :back
+      redirect_to user_child_path(@current_user.id, @child.id)
     else
       render :edit
     end
