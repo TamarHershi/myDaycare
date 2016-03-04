@@ -51,13 +51,13 @@ class ChildrenController < ApplicationController
 
   def send_emails
     user = @current_user
-    # @children = user.children
-    # @children.each do |child|
-    #   SendInfo.send_info(child.email, child).deliver_now
-    # end
-    child = user.children.last
-    SendInfo.send_info(child.email, child).deliver_now
-    redirect_to :back
+    @children = user.children
+    @children.each do |child|
+      SendInfo.send_info(child.email, child).deliver_now
+    end
+    # child = user.children.last
+    # SendInfo.send_info(child.email, child).deliver_now
+    redirect_to my_class_path(user.id)
   end
 
   def send_text_message

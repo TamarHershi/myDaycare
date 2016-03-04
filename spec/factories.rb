@@ -13,6 +13,7 @@ FactoryGirl.define do
     parents_names "Jone and Marry"
     gender "girl"
     email "ada@gmail.com"
+    attend true
   end
 
 end

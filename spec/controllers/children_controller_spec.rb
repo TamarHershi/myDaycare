@@ -23,14 +23,25 @@ RSpec.describe ChildrenController, type: :controller do
   end
 
   describe "POST" do
-    context "it check attendance " do
-      it "change the attend status from attend to not_attend"
+    context "it check attendance" do
+      it "change the attend status from attend to not_attend" do
+        post :attend, :id => child.id
+        expect(child.attend).to eq false
+      end
       it "change the attend status from not_attend to attend"
       it "render empty json" do
         post :attend , :id => child.id, format: :json
         body = JSON.parse(response.body)
         expect(body).to eq []
       end
+    end
+
+    context "it send emails" do
+      it "has redirect to the last page" do
+        post :send_emails
+        expect(response).to redirect_to my_class_path(user.id)
+      end
+
     end
 
   end
