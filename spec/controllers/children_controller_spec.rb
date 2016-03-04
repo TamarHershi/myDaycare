@@ -22,6 +22,19 @@ RSpec.describe ChildrenController, type: :controller do
     end
   end
 
+  describe "GET show" do
+    context "renders index page" do
+      it "renders children index page" do
+      get :show, :user_id => user.id, :id => child.id
+      expect(response).to render_template :show
+      end
+      it "is successful" do
+        get :show, :user_id => user.id, :id => child.id
+        expect(response.status).to eq 200
+      end
+    end
+  end
+
   describe "POST" do
     context "it check attendance" do
       it "change the attend status from attend to not_attend" do
