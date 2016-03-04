@@ -10,12 +10,29 @@ RSpec.describe ChildrenController, type: :controller do
   end
 
   describe "GET index" do
-    context "it is succeful" do
+    context "renders index page" do
       it "renders children index page" do
       get :index
       expect(response).to render_template :index
       end
+      it "is successful" do
+        get :index
+        expect(response.status).to eq 200
+      end
     end
+  end
+
+  describe "POST" do
+    context "it check attendance " do
+      it "change the attend status from attend to not_attend"
+      it "change the attend status from not_attend to attend"
+      it "render empty json" do
+        post :attend , :id => child.id, format: :json
+        body = JSON.parse(response.body)
+        expect(body).to eq []
+      end
+    end
+
   end
 #
 #   describe "GET #index" do
