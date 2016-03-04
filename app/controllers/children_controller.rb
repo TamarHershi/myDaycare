@@ -1,14 +1,14 @@
 require 'pry'
 class ChildrenController < ApplicationController
 
-  def create
-    @child = Child.create(child_params)
-    if @child.save
-      redirect_to @child, notice: 'Child was successfully created.'
-     else
-       render action: 'new'
-    end
-  end
+  # def create
+  #   @child = Child.create(child_params)
+  #   if @child.save
+  #     redirect_to @child, notice: 'Child was successfully created.'
+  #    else
+  #      render action: 'new'
+  #   end
+  # end
 
   def edit
     @child = Child.find(params[:id])
@@ -36,9 +36,9 @@ class ChildrenController < ApplicationController
     end
   end
 
-  def new
-    @child = Child.new
-  end
+  # def new
+  #   @child = Child.new
+  # end
 
   def index
     @user = @current_user
@@ -78,7 +78,7 @@ class ChildrenController < ApplicationController
 
       end
     end
-    redirect_to :back
+    redirect_to my_class_path(@current_user.id)
   end
 
   private

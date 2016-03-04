@@ -41,7 +41,13 @@ RSpec.describe ChildrenController, type: :controller do
         post :send_emails
         expect(response).to redirect_to my_class_path(user.id)
       end
+    end
 
+    context "it send MSM" do
+      it "redirect to the class page" do
+        post :send_text_message
+        expect(response).to redirect_to my_class_path(user.id)
+      end
     end
 
   end
