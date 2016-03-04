@@ -5,3 +5,4 @@
   <h3> <%= link_to "Edit info", edit_child_path(child.id) %> </h3>
 <% end %>
 <%= link_to "Add a child", new_user_child_path(@user.id) %>
+    <%= button_to "Send Welcome email", welcome_path %>
