@@ -10,19 +10,19 @@ require 'rails_helper'
             get :create, provider: :google
             expect(response).to redirect_to root_path
           end
-          #
-          # it "creates a user" do
-          #   expect { get :create, provider: :google }.to change(User, :count).by(1)
-          # end
+
+          it "creates a user" do
+            expect { get :create, provider: :google }.to change(User, :count).by(1)
+          end
           it "assigns the @user var" do
             get :create, provider: :google
             expect(assigns(:user)).to be_an_instance_of(User)
           end
-          #
-          # it "assigns the session[:user_id]" do
-          #   get :create, provider: :google
-          #   expect(session[:user_id]).to eq assigns(:current_user).id
-          # end
+
+          it "assigns the session[:user_id]" do
+            get :create, provider: :google
+            expect(session[:user_id]).to eq assigns(:user).id
+          end
 
         end
       end
