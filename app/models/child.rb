@@ -1,6 +1,7 @@
 class Child < ActiveRecord::Base
   has_many :users, through: :room
   has_many :infos
+  validates :email, :name, :last_name, presence: true
   belongs_to :room
 
     # This method associates the attribute ":avatar" with a file attachment

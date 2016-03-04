@@ -58,10 +58,22 @@ RSpec.describe ChildrenController, type: :controller do
         email: "example@gmail.com"
       }
     }
+    let (:child_bad_params) {
+      { name: "",
+        last_name: "",
+        email: "example@gmail.com"
+      }
+    }
     context "it has valid information" do
       it "redirect to the child show page" do
         patch :update, :child => child_params , :user_id => user.id, :id => child.id
         expect(subject).to redirect_to user_child_path(user.id, child.id)
+      end
+    end
+    context "it doesn't have valid information" do
+      it "redirect to the child show page" do
+        patch :update, :child => child_bad_params , :user_id => user.id, :id => child.id
+        expect(subject).to render_template :edit
       end
     end
   end
