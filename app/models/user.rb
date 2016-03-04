@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :children, through: :room
+   validates :email, :name, :provider, presence: true
   belongs_to :room
 
   def self.find_or_create_from_omniauth(auth_hash)
@@ -12,7 +13,7 @@ class User < ActiveRecord::Base
      # Create a new user
      user = User.new
      user.email        = auth_hash['info']['email']
-#     user.provider   = auth_hash["provider"]
+     user.provider   = auth_hash['provider']
      user.name   = auth_hash["info"]["name"]
   #   user.last_name      = auth_hash["info"]["last_name"]
      if user.save
