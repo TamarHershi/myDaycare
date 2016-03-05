@@ -16,4 +16,12 @@ FactoryGirl.define do
     attend true
   end
 
+  factory :info, class: Info do
+    child_id 1
+    diaper_m "dry"
+    diaper_a "bm"
+    diaper_n "wet"
+    lunch "none"
+    more_wipes true
+  end
 end

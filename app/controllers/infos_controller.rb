@@ -1,14 +1,14 @@
 class InfosController < ApplicationController
 
-  def show
-  end
 
   def update
-
     @info = Info.find(params[:id])
-    @child = Child.find(@info.child.id)
-    @info.update(info_params[:info])
-    redirect_to :my_class
+    @child = Child.find(@info.child_id)
+    @info.assign_attributes(info_params[:info])
+    if @info.save
+      redirect_to :my_class
+    else render :edit
+    end
   end
 
   def edit

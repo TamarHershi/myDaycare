@@ -28,7 +28,7 @@ class ChildrenController < ApplicationController
 
   def update
     @child = Child.find(params[:id])
-    @child.assign_attributes(child_params)
+    @child.update(child_params)
     if @child.save
       redirect_to user_child_path(@current_user.id, @child.id)
     else

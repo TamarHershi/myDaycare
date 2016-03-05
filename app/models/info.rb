@@ -1,5 +1,5 @@
-require 'pry'
 class Info < ActiveRecord::Base
+  validates :child_id, presence: true
   belongs_to :child
 
 
