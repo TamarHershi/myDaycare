@@ -71,7 +71,7 @@ require 'rails_helper'
 
           context "When it is a new day" do
             it "Makes all children be as not attend" do
-              binding.pry
+              # binding.pry
               post :new_forms
               expect(first_child.attend).to equal false
             end

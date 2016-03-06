@@ -2,6 +2,20 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
 
+  describe ".validations" do
+    it "name must be present" do
+      expect(Child.new(name: nil, email: "bla@gmail.com", last_name: "google")).to_not be_valid
+    end
+    it "email must be present" do
+      expect(User.new(name: "Bob", email: nil, last_name: "google")).to_not be_valid
+    end
+
+    it "last name must be present" do
+      expect(User.new(name: "Bob", email: "bla@gmail.com", last_name: nil)).to_not be_valid
+    end
+
+  end
+
   describe "can be instantiated" do
     it "exists" do
       expect(User.new).not_to be_nil

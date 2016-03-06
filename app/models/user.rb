@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :children, through: :room
-   validates :email, :name, :provider, presence: true
+  validates :email, :name, :provider, presence: true
   belongs_to :room
 
   def self.find_or_create_from_omniauth(auth_hash, &block)
