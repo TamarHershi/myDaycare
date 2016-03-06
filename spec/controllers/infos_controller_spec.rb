@@ -54,21 +54,24 @@ require 'rails_helper'
           date = DateTime.new(2014,2,3)
           info = Info.create(child_id: child_one.id, created_at: date)
           info_two = Info.create(child_id: child_two.id, created_at: date)
-          binding.pry
+          # binding.pry
           post :new_forms
-          expect(child_one.attend).to equal false
+          expect(child_one.reload.attend).to equal false
         end
+        it " redirect to welcome page with the right notice" do
+          child_one = Child.create(name: "child", last_name: "one", email: "child@gmail.com", attend: true, room_id: room.id)
+          child_two = Child.create(name: "child_two", last_name: "two", email: "two@Gmail.com", attend: true, room_id: room.id)
+          date = DateTime.new(2014,2,3)
+          info = Info.create(child_id: child_one.id, created_at: date)
+          info_two = Info.create(child_id: child_two.id, created_at: date)
+          post :new_forms
+          expect(flash[:notice]).to include "Good morning #{user.name}"
+          expect(response).to redirect_to root_path
+        end
+      end
 
-        it "redirect to welcome path with the right notice"
-        it "created new empty forms for all the children"
-      end
-      context "When it is the same day" do
-        it "redirect to welcome path with right notice"
-        it "will not create new forms"
-      end
+    end
+
+
 
   end
-
-
-
-end
