@@ -1,14 +1,14 @@
 class RoomsController < ApplicationController
 
-    def show
-        @room = Room.find(params[:id])
-        @children = @room.children
-        Child.not_attend(@children)
-        @user = @current_user
+    # def show
+    #     @room = Room.find(params[:id])
+    #     @children = @room.children
+    #     Child.not_attend(@children)
+    #     @user = @current_user
+    #
+    # end
 
-    end
-
-  def index
-  end
+  # def index
+  # end
 
 end

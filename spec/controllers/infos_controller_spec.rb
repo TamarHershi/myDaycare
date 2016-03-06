@@ -45,7 +45,6 @@ require 'rails_helper'
 #############
 
         describe "POST 'new_forms'" do
-
           let(:first_child) {
           {  name: "first",
             last_name: "first",
@@ -54,8 +53,8 @@ require 'rails_helper'
             room_id: 5 }
           }
           let(:second_child) {
-          { name: "first",
-            last_name: "first",
+          { name: "seconde",
+            last_name: "second",
             attend: true,
             email: "first@gmail.com",
             room_id: 5 }
@@ -71,6 +70,7 @@ require 'rails_helper'
 
           context "When it is a new day" do
             it "Makes all children be as not attend" do
+              binding.pry
               post :new_forms
               expect(first_child.attend).to equal false
             end

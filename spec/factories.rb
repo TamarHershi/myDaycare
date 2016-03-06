@@ -1,10 +1,15 @@
 FactoryGirl.define do
 
+  factory :room, class: Room do
+    name "Rainbow"
+  end
+
 
   factory :google_user, class: User do
     name "George"
     provider "google"
     email "test@test.com"
+    association :room, factory: :room
   end
 
   factory :child, class: Child do
@@ -14,6 +19,7 @@ FactoryGirl.define do
     gender "girl"
     email "ada@gmail.com"
     attend true
+    association :room, factory: :room
   end
 
   factory :info, class: Info do
@@ -23,5 +29,16 @@ FactoryGirl.define do
     diaper_n "wet"
     lunch "none"
     more_wipes true
+    association :child, factory: :child
   end
+
+  factory :new_child, class: Child do
+    name "first"
+    last_name "first"
+    email "first@gmail.com"
+    attend true
+    association :room, factory: :room
+  end
+
+
 end
