@@ -4,6 +4,13 @@ RSpec.describe Child, type: :model do
 
     let! (:child) { create(:child) }
     let! (:new_child) { create(:child) }
+    let (:room) {create(:room)}
+
+    let (:user) {
+      User.find_or_create_from_omniauth(OmniAuth.config.mock_auth[:google])  do |user|
+       user.room_id = room.id
+     end
+   }
 
   describe ".validations" do
     it "name must be present" do

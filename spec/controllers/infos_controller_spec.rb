@@ -45,46 +45,27 @@ require 'rails_helper'
 
 #############
 
-        describe "POST 'new_forms'" do
-          # let(:first_child) {
-          # {  name: "first",
-          #   last_name: "first",
-          #   email: "first@gmail.com",
-          #   attend: true,
-          #   room_id: 5 }
-          # }
-          # let(:second_child) {
-          # { name: "seconde",
-          #   last_name: "second",
-          #   attend: true,
-          #   email: "first@gmail.com",
-          #   room_id: 5 }
-          # }
-          # let(:new_info) {
-          # { diaper_m: "wet",
-          #   child_id: seconde_child.id,
-          #   created_at: "2016-03-03T16:29:30-08:00 ((2457453j,1770s,655923000n),-28800s,2299161j)"}
-          # }
-          # let(:room) {
-          #   {id: 5}
-          # }
+    describe "POST 'new_forms'" do
 
-          context "When it is a new day" do
-            it "Makes all children be as not attend" do
-              # binding.pry
-              post :new_forms
-              expect(first_child.attend).to equal false
-            end
+      context "When it is a new day" do
+        it "Makes all children be as not attend" do
+          child_one = Child.create(name: "child", last_name: "one", email: "child@gmail.com", attend: true, room_id: room.id)
+          child_two = Child.create(name: "child_two", last_name: "two", email: "two@Gmail.com", attend: true, room_id: room.id)
+          info = Info.create(child_id: child_one.id)
+          info_two = Info.create(child_id: child_two.id)
+          post :new_forms
+          expect(child_one.attend).to equal false
+        end
 
-            it "redirect to welcome path with the right notice"
-            it "created new empty forms for all the children"
-          end
-          context "When it is the same day" do
-            it "redirect to welcome path with right notice"
-            it "will not create new forms"
-          end
-
+        it "redirect to welcome path with the right notice"
+        it "created new empty forms for all the children"
       end
+      context "When it is the same day" do
+        it "redirect to welcome path with right notice"
+        it "will not create new forms"
+      end
+
+  end
 
 
 
