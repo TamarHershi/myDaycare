@@ -54,7 +54,6 @@ require 'rails_helper'
           date = DateTime.new(2014,2,3)
           info = Info.create(child_id: child_one.id, created_at: date)
           info_two = Info.create(child_id: child_two.id, created_at: date)
-          # binding.pry
           post :new_forms
           expect(child_one.reload.attend).to equal false
         end

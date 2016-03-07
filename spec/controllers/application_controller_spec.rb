@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'pry'
 
 # RSpec.describe ApplicationController, type: :controller do
 #
@@ -10,7 +9,6 @@ require 'pry'
 #       session[:user_id] = user.id
 #     end
 #     it "sets @current_user to logged in user" do
-#       binding.pry
 #       expect(assigns(:current_user).id).to eq(session[:user_id])
 #     end
 #   end

@@ -1,4 +1,3 @@
-require 'pry'
 class SendInfo < ActionMailer::Base
 
   def send_info(email, child)

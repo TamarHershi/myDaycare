@@ -1,4 +1,3 @@
-require 'pry'
 class ChildrenController < ApplicationController
 
   # def create
