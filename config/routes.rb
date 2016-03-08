@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'users/:id/attendees' => "users#attendees", as: :attendees
   get 'users/:id/my_class' => "users#my_class", as: :my_class
   delete "/logout" => "sessions#destroy", as: :logout
-  post '/infos' => "infos#new_forms", as: :new_forms
+  post '/infos/new_forms' => "infos#new_forms", as: :new_forms
   post '/children/email' => "children#send_emails", as: :send_emails
   post '/children/:id/attend' => "children#attend", as: :attend
   post '/children/sms' => "children#send_text_message", as: :send_text_message

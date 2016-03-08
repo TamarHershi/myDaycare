@@ -4,22 +4,14 @@ class UsersController < ApplicationController
   end
 
   def my_class
-    if check_new_day
-      @user = @current_user
-      @children = @user.children
-    else
-      redirect_to root_path, notice: "Please push the 'New Day' button"
-      # add flash note
-    end
-  end
-
-  def check_new_day
     info = @current_user.children.last.infos.last
     if info.created_at.strftime('%D')!= DateTime.now.strftime('%D')
-      return false
+      redirect_to new_forms_path
     else
-      return true
+      @user = @current_user
+      @children = @user.children
     end
+
   end
 
   def attendees

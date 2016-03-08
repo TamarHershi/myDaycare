@@ -4,7 +4,7 @@ RSpec.describe WelcomeController, type: :controller do
   describe "GET health" do
     it "render empty json" do
       get :health , format: :json
-      expect(response).to render_nothings
+      expect(response).to have_http_status(200)
     end
   end
 end
