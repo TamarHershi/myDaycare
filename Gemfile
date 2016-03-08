@@ -37,7 +37,7 @@ gem "omniauth-google-oauth2"
 gem 'omniauth-oauth2', '~> 1.3.1'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'bootstrap-sass', '~> 3.3.6'
-gem 'sqlite3', '~> 1.3.10'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -57,6 +57,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'sqlite3'
 end
 
 group :test do
