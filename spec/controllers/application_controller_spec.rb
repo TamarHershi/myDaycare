@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'pry'
 RSpec.describe ApplicationController, type: :controller do
 
  let(:user) { User.find_or_create_from_omniauth(OmniAuth.config.mock_auth[:google]) }
