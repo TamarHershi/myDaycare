@@ -12,7 +12,6 @@ class ApplicationController < ActionController::Base
    rescue ActiveRecord::RecordNotFound
   end
 
-
   def require_login
     unless current_user
       flash[:error] = "Please log in"

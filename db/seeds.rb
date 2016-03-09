@@ -37,9 +37,21 @@ seed_children = [
   parent2_number: "425-247-5901", medications_sensitivity: "none", city: "Woodinvlle",
   address: "12918 133rd pl NE", dob: 9/4/2012, parents_names: "Tammy and Guy", email: "misshershi@gmail.com"}
 ]
+date = DateTime.new(2016,3,1)
+date2 = DateTime.new(2016,3,2)
+
+seed_infos = [
+          {diaper_m: "dry", diaper_n: "dry", diaper_a: "bm", breakfast: "none", lunch: "all", afternoon: "most", general: "We played hide and seek", sleep_time: "12-2:30", more_clothes: true, created_at: date },
+          {diaper_m: "wet", diaper_n: "dry", diaper_a: "bm", breakfast: "most", lunch: "all", afternoon: "most", general: "She was fussy", sleep_time: "12-1:00", more_clothes: true, created_at: date2}
+            ]
 
 seed_children.each do |child|
-  Child.create(child)
+  child = Child.create(child)
+  seed_infos.each do |info|
+    info = Info.create(info)
+    info.child_id = child.id
+    info.save
+  end
 end
 
 seed_rooms = [
@@ -48,12 +60,6 @@ seed_rooms = [
 ]
 seed_rooms.each do |room|
   Room.create(room)
-end
-
-children = Child.all
-
-children.each do |child|
-  Info.create(:child_id => child.id)
 end
 
 seed_users.each do |teacher|
