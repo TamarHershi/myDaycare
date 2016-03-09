@@ -1,8 +1,35 @@
+<div class="info">
+
+<h1 style="font-family: 'Josefin Sans', serif;"><%= link_to @child.name, child_path(@child.id) %>'s Information
 
 <% @infos.reverse.each do |info| %>
-
-  <h1 style="font-family: 'Josefin Sans', serif;"> <%= @child.name %> <small>Daily Information <%= info.created_at.strftime('%D') %></h1></small>
-  <h2 class="form_h2">Diapers</h2>
-  <h3 style="font-family: 'Josefin Sans', serif;"> Morning diaper: <stuff><%= info.diaper_m %></stuff></h3>: 
-
+  <br>
+  <h2 style="font-family: 'Josefin Sans', serif;">Daily Information for: <%= info.created_at.strftime('%D') %></h2>
+  <h3>Diapers</h3>
+  <h3 style="font-family: 'Josefin Sans', serif;"> Morning diaper: <stuff><%= info.diaper_m %></stuff></h3>
+  <h3 style="font-family: 'Josefin Sans', serif;"> Noon diaper: <stuff><%= info.diaper_n %></stuff></h3>
+  <h3 style="font-family: 'Josefin Sans', serif;"> afternoon diaper: <stuff><%= info.diaper_a %></stuff></h3>
+  <h3>Meals</h3>
+  <h3 style="font-family: 'Josefin Sans', serif;"> breakfast: <stuff><%= info.breakfast %></stuff></h3>
+  <h3 style="font-family: 'Josefin Sans', serif;"> lunch: <stuff><%= info.lunch %></stuff></h3>
+  <h3 style="font-family: 'Josefin Sans', serif;"> afternoon: <stuff><%= info.afternoon %></stuff></h3>
+  <h3>More Information</h3>
+  <h3 style="font-family: 'Josefin Sans', serif;"> General Information: <stuff><%= info.general %></stuff></h3>
+  <h3 style="font-family: 'Josefin Sans', serif;"> Sleep Time: <stuff><%= info.sleep_time %></stuff></h3>
+  <% if info.more_wipes || info.more_clothes || info.more_daiper %>
+    <h3 style="font-family: 'Josefin Sans', serif;">Please Bring More:</h3>
+    <% if info.more_wipes %>
+      <stuff> Wipes </stuff>
+    <% end %>
+    <% if info.more_clothes %>
+      <stuff> Wipes </stuff>
+    <% end %>
+    <% if info.more_daiper %>
+      <stuff> Diapers </stuff>
+    <% end %>
+  <% end %>
+  <br>
 <% end %>
+
+
+</div>
