@@ -13,7 +13,7 @@ seed_users = [
 ]
 
 seed_parent = [
-  {name: "Jane", last_name: "Noelle", email: "misstamar@gmail.com", phone_number1: "425-247-5902"}
+  {name: "Jane and Lora", last_name: "Noelle", email: "misstamar@gmail.com", phone_number1: "425-247-5902"}
 ]
 
 parent = Parent.create(seed_parent[0])
