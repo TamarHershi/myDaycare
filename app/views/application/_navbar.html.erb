@@ -12,9 +12,9 @@
       </ul>
     <% else %>
       <ul id="navigation">
-        <li><%= link_to @current_user.name, root_path %></li>
+        <li><%= link_to @current_user.name, parents_path %></li>
         <li><%= link_to "My children", my_children_path(@parent.id) %></li>
-        <li><%= link_to "Information", attendees_path(@current_user.id) %></li>
+        <li><%= link_to "Pay tuition", parents_path %></li>
         <li><%= link_to "Logout", logout_path, method: :delete %></li>
       </ul>
     <% end %>
