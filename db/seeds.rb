@@ -7,10 +7,16 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 seed_users = [
-  {name: "Lucy", last_name: "Moulan", email: "misstamar@gmail.com", room_id: 2, provider: "google"},
-  {name: "Dora", last_name: "Moulan", email: "misstamar@gmail.com", room_id: 2, provider: "google"},
+  {name: "Lucy", last_name: "Moulan", email: "m@gmail.com", room_id: 2, provider: "google"},
+  {name: "Dora", last_name: "Moulan", email: "r@gmail.com", room_id: 2, provider: "google"},
   {name: "Tammy", last_name: "Hershenbaum", email: "misshershi@gmail.com", room_id: 2, provider: "google"}
 ]
+
+seed_parent = [
+  {name: "Jane", last_name: "Noelle", email: "misstamar@gmail.com", phone_number1: "425-247-5902"}
+]
+
+parent = Parent.create(seed_parent[0])
 
 
 seed_children = [
@@ -23,10 +29,10 @@ seed_children = [
   {name: "Ori", last_name: "Dowl", attend: true, gender: "girl", room_id: 2, parent1_number: "425-247-5902",
   parent2_number: "425-247-5901", medications_sensitivity: "", city: "Kirkland",
   address: "12918 133rd pl NE", dob: 8/14/2013, parents_names: "Boris and Brandon", email: "misshershi@gmail.com"},
-  {name: "Emily",last_name: "Mor", gender: "girl", room_id: 2, parent1_number: "425-247-5902",
+  {name: "Emily",last_name: "Mor", gender: "girl", room_id: 2, parent1_number: "425-247-5902", parent_id: parent.id,
   parent2_number: "425-247-5901", medications_sensitivity: "none", city: "Woodinvlle",
   address: "12918 133rd pl NE", dob: 9/4/2012, parents_names: "Tammy and Guy", email: "misshershi@gmail.com"},
-  {name: "Tom",last_name: "Mor", gender: "boy", room_id: 2, parent1_number: "425-247-5902",
+  {name: "Tom",last_name: "Mor", gender: "boy", room_id: 2, parent1_number: "425-247-5902",parent_id: parent.id,
   parent2_number: "425-247-5901", medications_sensitivity: "none", city: "Woodinvlle",
   address: "12918 133rd pl NE", dob: 9/4/2012, parents_names: "Tammy and Guy", email: "misshershi@gmail.com"}
 ]

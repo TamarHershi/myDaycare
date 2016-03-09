@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160304183257) do
+ActiveRecord::Schema.define(version: 20160309172810) do
 
   create_table "children", force: :cascade do |t|
     t.string   "name"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20160304183257) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "attached_file"
+    t.string   "parent_id"
   end
 
   create_table "infos", force: :cascade do |t|
@@ -51,6 +52,17 @@ ActiveRecord::Schema.define(version: 20160304183257) do
     t.boolean  "more_clothes", default: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+  end
+
+  create_table "parents", force: :cascade do |t|
+    t.string   "email"
+    t.string   "name"
+    t.string   "last_name"
+    t.string   "phone_number1"
+    t.string   "phone_number2"
+    t.string   "address"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "rooms", force: :cascade do |t|

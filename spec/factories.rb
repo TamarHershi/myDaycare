@@ -1,4 +1,7 @@
 FactoryGirl.define do
+  factory :parent do
+    
+  end
 
   factory :room, class: Room do
     name "Rainbow"
