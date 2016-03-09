@@ -4,7 +4,6 @@
   <div class="l-triangle-bottom"></div>
   <div class="rectangle">
     <% if @current_user.user_type == "t" %>
-    <% binding.pry %>
       <ul id="navigation">
         <li><%= link_to @current_user.name, root_path %></li>
         <li><%= link_to "My class", my_class_path(@current_user.id) %></li>
@@ -14,7 +13,7 @@
     <% else %>
       <ul id="navigation">
         <li><%= link_to @current_user.name, root_path %></li>
-        <li><%= link_to "My children", parent_children_path(@parent.id) %></li>
+        <li><%= link_to "My children", my_children_path(@parent.id) %></li>
         <li><%= link_to "Information", attendees_path(@current_user.id) %></li>
         <li><%= link_to "Logout", logout_path, method: :delete %></li>
       </ul>

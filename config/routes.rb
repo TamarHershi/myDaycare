@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/health' => 'welcome#health', as: :health
   # get "/auth/google_oauth2/callback", to: "sessions#create"
   resources :rooms, except: [:destroy, :update]
+  get "/parents/:id/my_children", to: 'parents#my_children', as: :my_children
   get "/auth/:provider/callback", to: "sessions#create"
   get 'users/:id/attendees' => "users#attendees", as: :attendees
   get 'users/:id/my_class' => "users#my_class", as: :my_class
