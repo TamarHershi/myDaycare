@@ -11,7 +11,11 @@ class SessionsController < ApplicationController
      @user = User.find_or_create_from_omniauth(auth_hash)
      if @user
        session[:user_id] = @user.id
-       redirect_to root_path, notice: "Welcome to My DayCare!"
+       if @user.user_type == "t"
+         redirect_to root_path, notice: "Welcome to My DayCare!"
+       else
+         redirect_to parents_path, notice: "Welcome to My DayCare!"
+       end
      else
        redirect_to new_session_path, notice: "Failed to save the user."
      end

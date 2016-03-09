@@ -23,10 +23,10 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def welcome
-    email = "misshershi@gmail.com"
-    WelcomeMailer.welcome(email, @current_user).deliver_now
-    redirect_to :back
-  end
+  # def welcome
+  #   email = "misshershi@gmail.com"
+  #   WelcomeMailer.welcome(email, @current_user).deliver_now
+  #   redirect_to :back
+  # end
 
 end
