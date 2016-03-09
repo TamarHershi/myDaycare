@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def my_class
     info = @current_user.children.last.infos.last
     if info.created_at.strftime('%D')!= DateTime.now.strftime('%D')
-      redirect_to new_forms_path
+      redirect_to :new_forms
     else
       @user = @current_user
       @children = @user.children
