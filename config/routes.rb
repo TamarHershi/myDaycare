@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/health' => 'welcome#health', as: :health
   # get "/auth/google_oauth2/callback", to: "sessions#create"
   resources :rooms, except: [:destroy, :update]
+  get "/.well-know/acme-challenge/#{ENV['LE_AUTH_REQUEST']}", to: 'welcome#letsencrypt'
   get "/parents/:id/my_children", to: 'parents#my_children', as: :my_children
   get "/parents/:parent_id/children/:id/my_child_info", to: 'parents#my_child_info', as: :my_child_info
   get "/auth/:provider/callback", to: "sessions#create"
