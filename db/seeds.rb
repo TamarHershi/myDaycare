@@ -7,13 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 seed_users = [
-  {name: "Lucy", last_name: "Moulan", email: "misstamar@gmail.com", room_id: 2},
-  {name: "Dora", last_name: "Moulan", email: "misstamar@gmail.com", room_id: 2},
-  {name: "Tammy", last_name: "Hershenbaum", email: "misshershi@gmail.com", room_id: 2}
+  {name: "Lucy", last_name: "Moulan", email: "misstamar@gmail.com", room_id: 2, provider: "google"},
+  {name: "Dora", last_name: "Moulan", email: "misstamar@gmail.com", room_id: 2, provider: "google"},
+  {name: "Tammy", last_name: "Hershenbaum", email: "misshershi@gmail.com", room_id: 2, provider: "google"}
 ]
-seed_users.each do |teacher|
-  User.create(teacher)
-end
+
 
 seed_children = [
   {name: "Yoav", last_name: "Mor", attend: true, gender: "boy", room_id: 2, parent1_number: "425-247-5902",
@@ -43,4 +41,14 @@ seed_rooms = [
 ]
 seed_rooms.each do |room|
   Room.create(room)
+end
+
+children = Child.all
+
+children.each do |child|
+  Info.create(:child_id => child.id)
+end
+
+seed_users.each do |teacher|
+  User.create(teacher)
 end
