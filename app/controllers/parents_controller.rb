@@ -14,6 +14,7 @@ class ParentsController < ApplicationController
   def my_child_info
     @parent = Parent.find(params[:parent_id])
     @child = Child.find(params[:id])
+    @infos = @child.infos
   end
 
 end

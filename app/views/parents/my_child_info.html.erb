@@ -1,1 +1,7 @@
 <%= @child.name %> info!!!!
+
+<% @infos.each do |info| %>
+
+  <h1 style="font-family: 'Josefin Sans', serif;"> <%= @child.name %> <small>Daily Information <%= info.created_at.strftime('%D') %></h1></small>
+
+<% end %>
