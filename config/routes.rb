@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   post '/children/sms' => "children#send_text_message", as: :send_text_message
   resources :sessions, except: [:update, :destroy]
   resources :infos, except: [:destroy]
+  resources :parents, except: [:destroy, :new]
 
   post '/users' => 'users#welcome', as: :welcome
   resources :users do

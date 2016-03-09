@@ -7,13 +7,14 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 seed_users = [
-  {name: "Lucy", last_name: "Moulan", email: "m@gmail.com", room_id: 2, provider: "google"},
-  {name: "Dora", last_name: "Moulan", email: "r@gmail.com", room_id: 2, provider: "google"},
-  {name: "Tammy", last_name: "Hershenbaum", email: "misshershi@gmail.com", room_id: 2, provider: "google"}
+  {name: "Lucy", last_name: "Moulan", email: "m@gmail.com", room_id: 2, provider: "google", user_type: "t"},
+  {name: "Dora", last_name: "Moulan", email: "r@gmail.com", room_id: 2, provider: "google", user_type: "t"},
+  {name: "Tammy", last_name: "Hershenbaum", email: "misshershi@gmail.com", room_id: 2, provider: "google", user_type: "t"},
+  {name: "Jane", last_name: "Miller", email: "misstamar@gmail.com", provider: "google", user_type: "p"}
 ]
 
 seed_parent = [
-  {name: "Jane and Lora", last_name: "Noelle", email: "misstamar@gmail.com", phone_number1: "425-247-5902"}
+  {name: "Jane and Lora", last_name: "Miller", email: "misstamar@gmail.com", phone_number1: "425-247-5902"}
 ]
 
 parent = Parent.create(seed_parent[0])
