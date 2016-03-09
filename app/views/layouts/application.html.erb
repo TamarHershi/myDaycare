@@ -15,8 +15,12 @@
     <div class="container">
       <div class="row">
         <div class="page-header">
-          <h1 style="font-family: 'Josefin Sans', serif;"> <%=link_to "My DayCare", root_path %> <small> Communication with Parents </small></h1>
+          <% if @current_user.user_type == "t" %>
+            <h1 style="font-family: 'Josefin Sans', serif;"> <%=link_to "My DayCare", root_path %> <small> Communication with Parents </small></h1>
+          <% else %>
+            <h1 style="font-family: 'Josefin Sans', serif;"> <%=link_to "My DayCare", parents_path %> <small> Communication with Parents </small></h1>
         </div>
+          <% end %>
       </div>
       <% if !flash.empty? %>
         <div class="flash">
