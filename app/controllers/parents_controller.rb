@@ -3,6 +3,7 @@ class ParentsController < ApplicationController
   def index
     @user = @current_user
     @parent = Parent.find_by(email: @user.email)
+    @parent = Parent.create(name: "new parent") if @parent.nil?
     # find the parent
   end
 
