@@ -5,6 +5,7 @@ class WelcomeController < ApplicationController
     if @current_user.user_type == "p"
       redirect_to parents_path
     elsif @current_user.user_type == "t"
+      @parent = @current_user
       redirect_to welcome_teacher_path
     end
   end
