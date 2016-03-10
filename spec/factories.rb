@@ -1,4 +1,7 @@
 FactoryGirl.define do
+  factory :registration do
+    
+  end
   factory :parent do
     
   end

@@ -37,6 +37,7 @@ gem "omniauth-google-oauth2"
 gem 'omniauth-oauth2', '~> 1.3.1'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'activemerchant'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
