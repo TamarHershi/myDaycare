@@ -10,7 +10,7 @@
         <li><%= link_to "Attendance", attendees_path(@current_user.id) %></li>
         <li><%= link_to "Logout", logout_path, method: :delete %></li>
       </ul>
-    <% else %>
+    <% elsif @current_user.user_type == "p" %>
       <ul id="navigation">
         <li><%= link_to @current_user.name, parents_path %></li>
         <li><%= link_to "My children", my_children_path(@parent.id) %></li>
