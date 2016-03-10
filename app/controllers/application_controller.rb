@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   helper_method :parent
   before_action :require_login
   before_action :current_user
+  before_action :parent
 
 
   def current_user
