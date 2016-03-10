@@ -14,6 +14,10 @@ class UsersController < ApplicationController
 
   end
 
+  def welcome_teacher
+    
+  end
+
   def attendees
     @user = @current_user
     @children = @user.children

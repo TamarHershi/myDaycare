@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'welcome#index'
+  get 'users/welcome_teacher', to: "users#welcome_teacher", as: :welcome_teacher
   get '/health' => 'welcome#health', as: :health
   # get "/auth/google_oauth2/callback", to: "sessions#create"
   resources :rooms, except: [:destroy, :update]
