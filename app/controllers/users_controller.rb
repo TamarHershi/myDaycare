@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def welcome_teacher
-    
+    @user = @current_user
   end
 
   def attendees

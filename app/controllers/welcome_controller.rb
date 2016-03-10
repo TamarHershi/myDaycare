@@ -2,9 +2,9 @@ class WelcomeController < ApplicationController
   skip_before_action :require_login, only: [:health]
 
   def index
-    if !@parent.nil?
+    if @current_user.user_type == "p"
       redirect_to parents_path
-    else
+    elsif @current_user.user_type == "t"
       redirect_to welcome_teacher_path
     end
   end
