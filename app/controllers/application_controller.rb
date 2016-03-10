@@ -14,8 +14,10 @@ class ApplicationController < ActionController::Base
   end
 
   def parent
-    if @current_user.user_type == "p"
-      @parent = Parent.find_by(email: @current_user.email)
+    if !@current_user.nil?
+      if @current_user.user_type == "p"
+        @parent = Parent.find_by(email: @current_user.email)
+      end
     end
   end
 
