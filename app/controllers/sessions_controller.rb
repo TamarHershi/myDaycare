@@ -12,8 +12,8 @@ class SessionsController < ApplicationController
      if @user
        session[:user_id] = @user.id
        if @user.user_type == "t"
-         redirect_to root_path, notice: "Welcome to My DayCare!"
-       else
+         redirect_to welcome_teacher_path, notice: "Welcome to My DayCare!"
+       elsif @user.user_type == "p"
          redirect_to parents_path, notice: "Welcome to My DayCare!"
        end
      else

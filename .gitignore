@@ -17,7 +17,7 @@
 /tmp
 /coverage
 /.env
-
+/paypal.rb
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
