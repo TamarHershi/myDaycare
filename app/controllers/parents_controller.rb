@@ -18,4 +18,8 @@ class ParentsController < ApplicationController
     @infos = @child.infos
   end
 
+  def pay_tuition
+    @parent = Parent.find(params[:id])
+  end
+
 end

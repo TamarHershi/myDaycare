@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'welcome#index'
+  get 'parents/:id/pay_tuition', to: "parents#pay_tuition", as: :pay_tuition
   get 'users/welcome_teacher', to: "users#welcome_teacher", as: :welcome_teacher
   get '/health' => 'welcome#health', as: :health
   # get "/auth/google_oauth2/callback", to: "sessions#create"
