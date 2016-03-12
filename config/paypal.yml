@@ -1,9 +1,0 @@
-default: &default
-  # Mode can be 'live' or 'sandbox'
-  mode: sandbox
-
-  # Credentials for Classic APIs
-  username: username
-  password: password
-  signature: AQU0e5vuZCvSg-XJploSa.sGUDlpAC6auTE-xLN1ERo8.JTZ4A51PHwu
-  app_id: app_id

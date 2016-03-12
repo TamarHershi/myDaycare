@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'parents/:id/pay_tuition', to: "parents#pay_tuition", as: :pay_tuition
   get 'users/welcome_teacher', to: "users#welcome_teacher", as: :welcome_teacher
   get '/health' => 'welcome#health', as: :health
+  get 'paypal/checkout', to: 'registrations#paypal_checkout', as: :paypal_checkout
   # get "/auth/google_oauth2/callback", to: "sessions#create"
   resources :rooms, except: [:destroy, :update]
   get "/.well-know/acme-challenge/#{ENV['LE_AUTH_REQUEST']}", to: 'welcome#letsencrypt'
