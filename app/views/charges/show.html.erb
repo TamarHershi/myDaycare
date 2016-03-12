@@ -1,5 +1,5 @@
-<%= hey @parent.name %>, here are your charges:
+ Hey <%= @parent.name %>, here are your charges:
 
 <% @charges.each do |charge| %>
-  <% charge.amount %>
+  <%= charge.amount %>
 <% end %>

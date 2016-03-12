@@ -4,10 +4,10 @@ class ChargesController < ApplicationController
 def new
   @parent = Parent.find(params[:parent_id])
   # in the future, I'll get a month as an argument
-  month = DateTime.now.strftime('%Y')
+  month = DateTime.now.strftime('%m')
   @months = {"01" => "January", "02" => "February", "03" => "March", "04" => "April", "05" => "May"}
   @current_month = @months[month]
-  @current_year = DateTime.now.strftime('%m')
+  @current_year = DateTime.now.strftime('%Y')
 end
 
 def create

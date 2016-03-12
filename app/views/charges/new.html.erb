@@ -1,4 +1,4 @@
-<h1> Hey <%= @parent.name %> </h1>
+<h1 style="font-family: 'Josefin Sans', serif;"> Hey <%= @parent.name %> </h1>
 
 <%= form_tag parent_charges_path(@parent.id) do %>
   <article>
@@ -8,7 +8,8 @@
       </div>
     <% end %>
     <label class="amount">
-      <span>Amount: $5.00</span>
+      <h2 style="font-family: 'Josefin Sans', serif;">Date:<stuff> <%= @current_month +" " + @current_year%></stuff></h2>
+      <h2 style="font-family: 'Josefin Sans', serif;">Tuition:<stuff> $5.00</stuff></h2>
     </label>
   </article>
 
