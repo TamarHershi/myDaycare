@@ -13,7 +13,8 @@ end
 def create
   # Amount in cents
   @amount = 500
-
+  @parent = Parent.find(params[:parent_id])
+  Charge.create(:parent_id => @parent.id, :date => DateTime.now.strftime('%Y-%m'), :amount => @amount)
   customer = Stripe::Customer.create(
     :email => params[:stripeEmail],
     :source  => params[:stripeToken]
@@ -29,6 +30,11 @@ def create
 rescue Stripe::CardError => e
   flash[:error] = e.message
   redirect_to new_charge_path
+end
+
+def show
+  @parent = Parent.find(params[:parent_id])
+  @charges = @parent.charges
 end
 
 
