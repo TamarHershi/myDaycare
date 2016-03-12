@@ -19,8 +19,9 @@ Rails.application.routes.draw do
   resources :sessions, except: [:update, :destroy]
   resources :infos, except: [:destroy]
   resources :parents, except: [:destroy] do
-    resource :charges
-    resources :children
+    resources :children do
+      resource :charges
+    end
   end
 
   post '/users' => 'users#welcome', as: :welcome

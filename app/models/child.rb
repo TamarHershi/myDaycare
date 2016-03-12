@@ -1,6 +1,7 @@
 class Child < ActiveRecord::Base
   belongs_to :parent
   has_many :users, through: :room
+  has_many :charges
   has_many :infos
   validates :email, :name, :last_name, presence: true
   belongs_to :room

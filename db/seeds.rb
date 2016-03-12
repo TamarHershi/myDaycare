@@ -22,19 +22,19 @@ parent = Parent.create(seed_parent[0])
 
 seed_children = [
   {name: "Yoav", last_name: "Mor", attend: true, gender: "boy", room_id: 2, parent1_number: "425-247-5902",
-  parent2_number: "425-247-5901", medications_sensitivity: "Advil", city: "Seattle",
+  parent2_number: "425-247-5901", medications_sensitivity: "Advil", city: "Seattle", tuition: 1450,
   address: "12918 133rd pl NE", dob: 4/3/2012, parents_names: "Tammy and Guy", email: "misshershi@gmail.com"},
   {name: "Daniel", last_name: "Andy", attend: true, gender: "girl", room_id: 2, parent1_number: "425-247-5902",
-  parent2_number: "425-247-5901", medications_sensitivity: "Tylanol", city: "Bellevue",
+  parent2_number: "425-247-5901", medications_sensitivity: "Tylanol", city: "Bellevue", tuition: 1450,
   address: "12918 133rd pl NE", dob: 5/6/2014, parents_names: "Boris and Brandon", email: "misshershi@gmail.com"},
   {name: "Ori", last_name: "Dowl", attend: true, gender: "girl", room_id: 2, parent1_number: "425-247-5902",
-  parent2_number: "425-247-5901", medications_sensitivity: "", city: "Kirkland",
+  parent2_number: "425-247-5901", medications_sensitivity: "", city: "Kirkland", tuition: 1450,
   address: "12918 133rd pl NE", dob: 8/14/2013, parents_names: "Boris and Brandon", email: "misshershi@gmail.com"},
   {name: "Emily",last_name: "Mor", gender: "girl", room_id: 2, parent1_number: "425-247-5902", parent_id: parent.id,
-  parent2_number: "425-247-5901", medications_sensitivity: "none", city: "Woodinvlle",
+  parent2_number: "425-247-5901", medications_sensitivity: "none", city: "Woodinvlle", tuition: 1450,
   address: "12918 133rd pl NE", dob: 9/4/2012, parents_names: "Tammy and Guy", email: "misshershi@gmail.com"},
   {name: "Tom",last_name: "Mor", gender: "boy", room_id: 2, parent1_number: "425-247-5902",parent_id: parent.id,
-  parent2_number: "425-247-5901", medications_sensitivity: "none", city: "Woodinvlle",
+  parent2_number: "425-247-5901", medications_sensitivity: "none", city: "Woodinvlle", tuition: 1450,
   address: "12918 133rd pl NE", dob: 9/4/2012, parents_names: "Tammy and Guy", email: "misshershi@gmail.com"}
 ]
 date = DateTime.new(2016,3,1)

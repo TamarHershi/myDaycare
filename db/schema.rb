@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160312051959) do
+ActiveRecord::Schema.define(version: 20160312055622) do
 
   create_table "charges", force: :cascade do |t|
     t.string   "year"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20160312051959) do
     t.datetime "avatar_updated_at"
     t.string   "attached_file"
     t.string   "parent_id"
+    t.integer  "tuition"
   end
 
   create_table "infos", force: :cascade do |t|
