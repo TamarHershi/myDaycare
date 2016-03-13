@@ -16,7 +16,7 @@ def create
   @parent = Parent.find(params[:parent_id])
   @child = Child.find(params[:child_id])
   @amount = @child.tuition
-  Charge.create(:parent_id => @parent.id, :date => DateTime.now.strftime('%Y-%m'), :amount => @amount)
+  Charge.create(:child_id => @child.id, :date => DateTime.now.strftime('%Y-%m'), :amount => @amount)
   customer = Stripe::Customer.create(
     :email => params[:stripeEmail],
     :source  => params[:stripeToken]

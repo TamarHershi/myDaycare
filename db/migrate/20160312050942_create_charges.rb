@@ -5,7 +5,7 @@ class CreateCharges < ActiveRecord::Migration
       t.string :month
       t.integer :amount
       t.integer :confirmation_num
-      t.integer :parent_id
+      t.integer :child_id
       t.timestamps null: false
     end
   end
