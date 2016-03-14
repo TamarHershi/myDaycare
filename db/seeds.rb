@@ -5,6 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.delete_all
+Charge.delete_all
+Room.delete_all
+Info.delete_all
+Parent.delete_all
+Child.delete_all
 
 seed_users = [
   {name: "Lucy", last_name: "Moulan", email: "m@gmail.com", room_id: 2, provider: "google", user_type: "t"},
