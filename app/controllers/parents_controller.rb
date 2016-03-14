@@ -20,6 +20,11 @@ class ParentsController < ApplicationController
 
   def pay_tuition
     @parent = Parent.find(params[:id])
+    @children = @parent.children
+    month = DateTime.now.strftime('%m')
+    @months = {"01" => "January", "02" => "February", "03" => "March", "04" => "April", "05" => "May"}
+    @current_month = @months[month]
+    @current_year = DateTime.now.strftime('%Y')
   end
 
 end
