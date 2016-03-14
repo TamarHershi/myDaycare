@@ -1,6 +1,6 @@
 <% @infos.reverse.each do |info| %>
   <h2 style="font-family: 'Josefin Sans', serif;">Daily Information for: <stuff-big><%= info.created_at.strftime('%D') %></stuff-big></h2>
-
+<div class="border">
   <h3 class="info_h3">Diapers</h3>
   <table class="table table-stripe">
     <thead>
@@ -65,4 +65,5 @@
       <p>✔️ Wipes</p>
     <% end %>
   <% end %>
+</div>
 <% end %>
