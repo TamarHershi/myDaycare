@@ -1,14 +1,18 @@
+<h1 style="font-family: 'Josefin Sans', serif;"> Hey <%= @parent.name %> </h1>
+<br>
   <% if !@parent.more_then_one? %>
     <%= render "charges/form", :parent => @parent, :child => @children.last, :amount => @children.last.room.tuition %>
   <% else %>
     <% t_child = Child.highest_tuition(@children) %>
     <% high_tuistion = t_child.room.tuition %>
     <% @children.each do |child| %>
-      <% if @child == t_child %>
-        <% @child = t_child %>
-        <% @amount = high_tuistion %>
-        <%= render "charges/form", :parent => @parent, :child => @child, :amount => @amount %>
+      <% if child == t_child %>
+        <h1> Payment for <%= child.name %></h1>
+          <% @child = t_child %>
+          <% @amount = high_tuistion %>
+          <%= render "charges/form", :parent => @parent, :child => @child, :amount => @amount %>
       <% else %>
+        <h1> Payment for <%= child.name %></h1>
         <% @amount = child.room.tuition * 90/100 %>
         <% @child = child %>
         <%= render "charges/form", :parent => @parent, :child => @child, :amount => @amount %>
