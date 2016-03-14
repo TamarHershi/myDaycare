@@ -1,0 +1,6 @@
+<% (1..@num_children).each do |i| %>
+  <% if @parent.more_then_one? %>
+    <!-- just regular form -->
+  <% else %>
+    <% t_child = Child.highest_tuition(@children) %>
+    <% high_tuistion = t_child.room.tuition %>

@@ -23,6 +23,16 @@ class Child < ActiveRecord::Base
     end
   end
 
+  def self.highest_tuition(children)
+    high = 0
+    t_child = children.first
+    children.each do |child|
+      t_child = child if child.room.tuition > high
+    end
+    return t_child
+  end
+
+
 
 
 end
