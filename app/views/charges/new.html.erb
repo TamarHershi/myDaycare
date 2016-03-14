@@ -1,6 +1,6 @@
 <h1 style="font-family: 'Josefin Sans', serif;"> Hey <%= @parent.name %> </h1>
 
-<%= form_tag parent_child_charges_path(@parent.id, @child.id) do %>
+<%= form_tag parent_child_charges_path(@parent.id, @child.id, amount: @amount) do %>
   <article>
     <% if flash[:error].present? %>
       <div id="error_explanation">
@@ -16,6 +16,6 @@
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="A month's subscription"
-          data-amount="500"
+          data-amount="<%= @amount %> "
           data-locale="auto"></script>
 <% end %>

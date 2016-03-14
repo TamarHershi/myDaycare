@@ -4,6 +4,7 @@ class ChargesController < ApplicationController
 def new
   @parent = Parent.find(params[:parent_id])
   @child = Child.find(params[:child_id])
+  @amount = @child.room.tuition
   # in the future, I'll get a month as an argument
   month = DateTime.now.strftime('%m')
   @months = {"01" => "January", "02" => "February", "03" => "March", "04" => "April", "05" => "May"}
@@ -16,7 +17,8 @@ def create
   @parent = Parent.find(params[:parent_id])
   @child = Child.find(params[:child_id])
   @amount = @child.tuition
-  Charge.create(:child_id => @child.id, :date => DateTime.now.strftime('%Y-%m'), :amount => @amount)
+  Charge.create(:parent_id => @parent.id, :date => DateTime.now.strftime('%Y-%m'), :amount => @amount)
+  raise
   customer = Stripe::Customer.create(
     :email => params[:stripeEmail],
     :source  => params[:stripeToken]

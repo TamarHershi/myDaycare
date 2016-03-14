@@ -30,7 +30,7 @@ seed_children = [
   {name: "Ori", last_name: "Dowl", attend: true, gender: "girl", room_id: 2, parent1_number: "425-247-5902",
   parent2_number: "425-247-5901", medications_sensitivity: "", city: "Kirkland", tuition: 1450,
   address: "12918 133rd pl NE", dob: 8/14/2013, parents_names: "Boris and Brandon", email: "misshershi@gmail.com"},
-  {name: "Emily",last_name: "Mor", gender: "girl", room_id: 2, parent1_number: "425-247-5902", parent_id: parent.id,
+  {name: "Emily",last_name: "Mor", gender: "girl", room_id: 1, parent1_number: "425-247-5902", parent_id: parent.id,
   parent2_number: "425-247-5901", medications_sensitivity: "none", city: "Woodinvlle", tuition: 1450,
   address: "12918 133rd pl NE", dob: 9/4/2012, parents_names: "Tammy and Guy", email: "misshershi@gmail.com"},
   {name: "Tom",last_name: "Mor", gender: "boy", room_id: 2, parent1_number: "425-247-5902",parent_id: parent.id,
@@ -55,8 +55,8 @@ seed_children.each do |child|
 end
 
 seed_rooms = [
-  {name: "Rainbow"},
-  {name: "Sunshine"}
+  {name: "Rainbow", tuition: 1250},
+  {name: "Sunshine", tuition: 1450}
 ]
 seed_rooms.each do |room|
   Room.create(room)
