@@ -1,12 +1,12 @@
 <% @infos.reverse.each do |info| %>
-  <h2 style="font-family: 'Josefin Sans', serif;">Daily Information for: <%= info.created_at.strftime('%D') %></h2>
+  <h2 style="font-family: 'Josefin Sans', serif;">Daily Information for: <stuff-big><%= info.created_at.strftime('%D') %></stuff-big></h2>
 
-  <h3>Diapers</h3>
+  <h3 class="info_h3">Diapers</h3>
   <table class="table table-stripe">
     <thead>
       <th>Morning </th>
       <th>Noon </th>
-      <th>afternoon </th>
+      <th>Afternoon </th>
     </thead>
     <tbody>
       <tr class="success">
@@ -16,12 +16,12 @@
       </tr>
     </tbody>
   </table>
-  <h3>Meals</h3>
+  <h3 class="info_h3">Meals</h3>
   <table class="table table-stripe">
     <thead>
-      <th> Breakfast </th>
-      <th> Lunch </th>
-      <th> Afternoon Snack </th>
+      <th> Morning </th>
+      <th> Noon </th>
+      <th> Afternoon</th>
     </thead>
     <tbody>
       <tr class="warning">
@@ -31,7 +31,7 @@
       </tr>
     </tbody>
   </table>
-  <h3>General Info</h3>
+  <h3 class="info_h3">General Info</h3>
   <table class="table table-stripe">
     <thead>
       <th></th>
@@ -42,7 +42,7 @@
       </tr>
     </tbody>
   </table>
-  <h3>Sleep time</h3>
+  <h3 class="info_h3">Sleep time</h3>
   <table class="table table-stripe">
     <thead>
       <th></th>
@@ -53,31 +53,16 @@
       </tr>
     </tbody>
   </table>
-  <h3>More Of</h3>
-  <table class="table table-stripe">
-    <thead>
-      <th class= "text-center">Clothes</th>
-      <th class= "text-center">Diapers</th>
-      <th class= "text-center">Wipes</th>
-    </thead>
-    <tbody>
-      <tr class="success">
-        <% if info.more_clothes %>
-          <td class= "text-center">✔️</td>
-        <% else %>
-          <td></td>
-        <% end %>
-        <% if info.more_daiper %>
-          <td class= "text-center">✔️</td>
-        <% else %>
-          <td></td>
-        <% end %>
-        <% if info.more_wipes %>
-          <td class= "text-center">✔️</td>
-        <% else %>
-          <td></td>
-        <% end %>
-      </tr>
-    </tbody>
-  </table>
+  <% if info.more_daiper || info.more_wipes || info.more_clothes %>
+    <h3 class="info_h3">More Of</h3>
+    <% if info.more_clothes %>
+      <p>✔️ Clothes</p>
+    <% end %>
+    <% if info.more_daiper %>
+      <p>✔️ Daipers</p>
+    <% end %>
+    <% if info.more_wipes %>
+      <p>✔️ Wipes</p>
+    <% end %>
   <% end %>
+<% end %>
