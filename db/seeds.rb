@@ -55,8 +55,8 @@ seed_children.each do |child|
 end
 
 seed_rooms = [
-  {name: "Rainbow", tuition: 1250},
-  {name: "Sunshine", tuition: 1450}
+  {name: "Rainbow", tuition: 125000},
+  {name: "Sunshine", tuition: 145000}
 ]
 seed_rooms.each do |room|
   Room.create(room)
