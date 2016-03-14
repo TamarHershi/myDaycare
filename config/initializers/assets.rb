@@ -9,7 +9,7 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
-`Rails.application.config.assets.precompile += %w( White.png )`
-`Rails.application.config.assets.precompile += %w( Cube-128.ico )`
-`Rails.application.config.assets.precompile += %w( apple-ico.ico )`
-`Rails.application.config.assets.precompile += %w( 299895_orig.jpg )`
+Rails.application.config.assets.precompile += %w( White.png )
+Rails.application.config.assets.precompile += %w( Cube-128.ico )
+Rails.application.config.assets.precompile += %w( apple-ico.ico )
+Rails.application.config.assets.precompile += %w( 299895_orig.jpg )

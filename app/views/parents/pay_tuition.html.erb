@@ -28,6 +28,7 @@
       </tbody>
   <% else %>
     <% t_child = Child.highest_tuition(@children) %>
+    <% binding.pry %>
     <% high_tuistion = t_child.room.tuition %>
     <tbody>
       <tr>
