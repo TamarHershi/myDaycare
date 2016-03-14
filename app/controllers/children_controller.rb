@@ -80,6 +80,7 @@ class ChildrenController < ApplicationController
     redirect_to my_class_path(@current_user.id)
   end
 
+
   private
 
   def child_params

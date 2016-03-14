@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160314054847) do
+ActiveRecord::Schema.define(version: 20160314175051) do
 
   create_table "charges", force: :cascade do |t|
     t.string   "year"
@@ -19,12 +19,13 @@ ActiveRecord::Schema.define(version: 20160314054847) do
     t.integer  "amount"
     t.integer  "confirmation_num"
     t.integer  "parent_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.string   "date"
     t.integer  "child_id"
     t.string   "authenticity_token"
     t.string   "stripeToken"
+    t.boolean  "payed",              default: false
   end
 
   create_table "children", force: :cascade do |t|

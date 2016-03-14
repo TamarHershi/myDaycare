@@ -14,8 +14,8 @@
       <ul id="navigation">
         <li><%= link_to @parent.name, parents_path %></li>
         <li><%= link_to "My children", my_children_path(@parent.id) %></li>
-        <li><%= link_to "Logout", logout_path, method: :delete %></li>
         <li><%= link_to "Pay Tuition", pay_tuition_path(@parent.id) %></li>
+        <li><%= link_to "Logout", logout_path, method: :delete %></li>
       </ul>
     <% end %>
   </div>

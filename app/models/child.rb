@@ -32,6 +32,13 @@ class Child < ActiveRecord::Base
     return t_child
   end
 
+  def paid?
+    charges = self.charges
+    charges.each do |charge|
+      return true if DateTime.now.strftime('%Y-%m') == charge.date
+    end
+  end
+
 
 
 

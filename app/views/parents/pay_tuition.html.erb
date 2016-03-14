@@ -1,23 +1,74 @@
-<h1 style="font-family: 'Josefin Sans', serif;"> Hey <%= @parent.name %> </h1>
+<h1 style="font-family: 'Josefin Sans', serif;"> Payment for <stuff-big> <%= @current_month +" " + @current_year%></stuff-big> </h1>
 <br>
+<table class="table table-hover">
+  <thead>
+    <th> Child Name </th>
+    <th> Class </th>
+    <th> Monthly Tution </th>
+    <th> Discount </th>
+    <th> Final Charge</th>
+    <th>  </th>
+  </thead>
   <% if !@parent.more_then_one? %>
-    <%= render "charges/form", :parent => @parent, :child => @children.last, :amount => @children.last.room.tuition %>
+    <% @child = @children.last %>
+      <% @amount = @child.room.tuition %>
+      <tbody>
+        <tr>
+          <td><%= @child.name %></td>
+          <td><%= @child.room.name %></td>
+          <td>$ <%= @amount/100 %></td>
+          <td> none </td>
+          <td><%= @amount/100 %></td>
+          <% if !@child.paid? %>
+            <td> <%= render "charges/form", :parent => @parent, :child => @child, :amount => @amount %></td>
+          <% else %>
+            <td> Paid</td>
+          <% end %>
+        </tr>
+      </tbody>
   <% else %>
     <% t_child = Child.highest_tuition(@children) %>
     <% high_tuistion = t_child.room.tuition %>
-    <% @children.each do |child| %>
-      <% if child == t_child %>
-        <h1> Payment for <%= child.name %></h1>
-          <% @child = t_child %>
-          <% @amount = high_tuistion %>
-          <% @discount = false %>
-          <%= render "charges/form", :parent => @parent, :child => @child, :amount => @amount, :discount => @discount %>
-      <% else %>
-        <h1> Payment for <%= child.name %></h1>
-        <% @amount = child.room.tuition * 90/100 %>
-        <% @child = child %>
-        <% @discount = true %>
-        <%= render "charges/form", :parent => @parent, :child => @child, :amount => @amount, :discount => @discount %>
-      <% end %>
+    <tbody>
+      <tr>
+        <% @children.each do |child| %>
+          <% if child == t_child %>
+            <!-- <h2 style="font-family: 'Indie Flower', serif;"><%= child.name %>:</h2> -->
+              <% @child = t_child %>
+              <% @amount = high_tuistion %>
+              <% @discount = false %>
+          <% else %>
+          <!-- <h2 style="font-family: 'Indie Flower', serif;"><%= child.name %>:</h2> -->
+            <% @amount = child.room.tuition * 90/100 %>
+            <% @child = child %>
+            <% @discount = true %>
+          <% end %>
+          <td><%= @child.name %></td>
+          <td><%= @child.room.name %></td>
+          <td>$ <%= @child.room.tuition/100 %></td>
+          <% if @discount %>
+            <td> 10% </td>
+          <% else %>
+            <td> none </td>
+          <% end %>
+          <td>$<%= @amount/100 %></td>
+          <% if !@child.paid? %>
+            <td> <%= render "charges/form", :parent => @parent, :child => @children.last, :amount => @children.last.room.tuition %></td>
+          <% else %>
+            <td>Paid</td>
+          <% end %>
+      </tr>
     <% end %>
   <% end %>
+
+
+
+
+      <tr>
+        <td>Emily</td>
+        <td>Sunsine</td>
+        <td>$1450</td>
+        <td> 10% </td>
+        <td> $1400 </td>
+      </tr>
+    </tbody>
