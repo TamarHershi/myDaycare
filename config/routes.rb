@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'welcome#index'
+  post 'charges/reset_payment', to: 'charges#reset_payment', as: :reset_payment
   get 'parents/:id/pay_tuition', to: "parents#pay_tuition", as: :pay_tuition
   get 'users/welcome_teacher', to: "users#welcome_teacher", as: :welcome_teacher
   get '/health' => 'welcome#health', as: :health

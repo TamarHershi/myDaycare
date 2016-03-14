@@ -29,10 +29,12 @@ def create
     :description => 'Rails Stripe customer',
     :currency    => 'usd'
   )
+redirect_to pay_tuition_path(@parent.id)
 
 rescue Stripe::CardError => e
   flash[:error] = e.message
   redirect_to new_charge_path
+
 end
 
 def show
@@ -40,5 +42,14 @@ def show
   @charges = @parent.charges
 end
 
+def reset_payment
+  charges = Charge.all
+  charges.each do |charge|
+    charge.payed = false
+    charge.save
+    end
+
+  redirect_to :back
+end
 
 end

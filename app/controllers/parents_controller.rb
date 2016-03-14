@@ -27,4 +27,5 @@ class ParentsController < ApplicationController
     @current_year = DateTime.now.strftime('%Y')
   end
 
+
 end

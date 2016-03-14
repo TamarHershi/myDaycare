@@ -36,7 +36,7 @@ class Child < ActiveRecord::Base
     charges = self.charges
     return false if charges.count == 0
     charges.each do |charge|
-      return true if DateTime.now.strftime('%Y-%m') == charge.date
+      return true if (DateTime.now.strftime('%Y-%m') == charge.date) && (charge.payed)
     end
     return false
   end
