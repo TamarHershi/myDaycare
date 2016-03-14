@@ -7,7 +7,6 @@
       <br>
       <% info = child.infos.last %>
       <%= link_to image_tag(child.avatar.url(:square), :class => "child-border"), my_child_info_path(@parent.id, child.id) %>
-      <%= link_to "Pay tution" ,new_parent_child_charges_path(@parent.id, child.id) %>
       <br>
       <br>
     </div>
