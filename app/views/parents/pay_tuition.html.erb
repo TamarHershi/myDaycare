@@ -28,14 +28,14 @@
       </tbody>
   <% else %>
     <% t_child = Child.highest_tuition(@children) %>
-    <% high_tuistion = t_child.room.tuition %>
+    <% high_tuition = t_child.room.tuition %>
     <tbody>
       <tr>
         <% @children.each do |child| %>
           <% if child == t_child %>
             <!-- <h2 style="font-family: 'Indie Flower', serif;"><%= child.name %>:</h2> -->
               <% @child = t_child %>
-              <% @amount = high_tuistion %>
+              <% @amount = high_tuition %>
               <% @discount = false %>
           <% else %>
           <!-- <h2 style="font-family: 'Indie Flower', serif;"><%= child.name %>:</h2> -->
