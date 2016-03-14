@@ -8,7 +8,13 @@
     <% end %>
     <label class="amount">
       <h2 style="font-family: 'Josefin Sans', serif;">Date:<stuff> <%= @current_month +" " + @current_year%></stuff></h2>
+      <% if @discount == true %>
+        <h3>You get 10% discound for <%= @child.name %> Original Tuition: <%= @amount * 100/90/100 %> </h3>
       <h2 style="font-family: 'Josefin Sans', serif;">Tuition: <stuff>$ <%= @amount/100 %></stuff></h2>
+      <% else %>
+      <h2 style="font-family: 'Josefin Sans', serif;">Tuition: <stuff>$ <%= @amount/100 %></stuff></h2>
+      <% end %>
+
     </label>
   </article>
 

@@ -10,12 +10,14 @@
         <h1> Payment for <%= child.name %></h1>
           <% @child = t_child %>
           <% @amount = high_tuistion %>
-          <%= render "charges/form", :parent => @parent, :child => @child, :amount => @amount %>
+          <% @discount = false %>
+          <%= render "charges/form", :parent => @parent, :child => @child, :amount => @amount, :discount => @discount %>
       <% else %>
         <h1> Payment for <%= child.name %></h1>
         <% @amount = child.room.tuition * 90/100 %>
         <% @child = child %>
-        <%= render "charges/form", :parent => @parent, :child => @child, :amount => @amount %>
+        <% @discount = true %>
+        <%= render "charges/form", :parent => @parent, :child => @child, :amount => @amount, :discount => @discount %>
       <% end %>
     <% end %>
   <% end %>
