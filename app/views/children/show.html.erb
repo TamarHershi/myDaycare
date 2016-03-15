@@ -1,3 +1,3 @@
 <h1><%= @child.name %>'s photo: </h1>
-<h3> <%= link_to "Add Photo", edit_child_path(@child.id) %> </h3>
+<h3> <%= link_to "Add Photo", edit_child_path(@child.id, :parent_id => @parent.id) %> </h3>
 <%= image_tag @child.avatar.url(:square) %>

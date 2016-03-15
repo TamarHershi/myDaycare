@@ -11,6 +11,7 @@ class ChildrenController < ApplicationController
 
   def edit
     @child = Child.find(params[:id])
+    @parent = Parent.find(params[:parent_id])
   end
 
   def attend
@@ -27,9 +28,14 @@ class ChildrenController < ApplicationController
 
   def update
     @child = Child.find(params[:id])
+    @parent = Parent.find(params[:parent_id])
     @child.update(child_params)
     if @child.save
-      redirect_to user_child_path(@current_user.id, @child.id)
+      if !@parent.nil?
+        redirect_to child_path(@child.id, :parent_id => @parent.id)
+      else
+        redirect_to user_child_path(@current_user.id, @child.id)
+      end
     else
       render :edit
     end
@@ -46,6 +52,7 @@ class ChildrenController < ApplicationController
 
   def show
     @child = Child.find(params[:id])
+    @parent = Parent.find(params[:parent_id])
   end
 
   def send_emails
