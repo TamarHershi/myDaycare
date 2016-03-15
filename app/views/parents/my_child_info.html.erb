@@ -1,60 +1,74 @@
 <br>
-<h1> <%= @child.name %>'s Data History</h1>
+<h1 class="form_h2"> <%= @child.name %>'s Data History</h1>
+<br>
+<br>
 <% @infos.reverse.each do |info| %>
   <h2 style="font-family: 'Josefin Sans', serif;">Daily Information for: <stuff-big><%= info.created_at.strftime('%D') %></stuff-big></h2>
 <div class="border">
-  <h3 class="info_h3">Diapers</h3>
-  <table class="table table-stripe">
-    <thead>
-      <th>Morning </th>
-      <th>Noon </th>
-      <th>Afternoon </th>
-    </thead>
-    <tbody>
-      <tr class="success">
-        <td><%= info.diaper_m %></td>
-        <td><%= info.diaper_n %></td>
-        <td><%= info.diaper_a %></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 class="info_h3">Meals</h3>
-  <table class="table table-stripe">
-    <thead>
-      <th> Morning </th>
-      <th> Noon </th>
-      <th> Afternoon</th>
-    </thead>
-    <tbody>
-      <tr class="warning">
-        <td><%= info.breakfast %></td>
-        <td><%= info.lunch %></td>
-        <td><%= info.afternoon %></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 class="info_h3">General Info</h3>
-  <table class="table table-stripe">
-    <thead>
-      <th></th>
-    </thead>
-    <tbody>
-      <tr class="info">
-        <td><%= info.general %></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 class="info_h3">Sleep time</h3>
-  <table class="table table-stripe">
-    <thead>
-      <th></th>
-    </thead>
-    <tbody>
-      <tr class="active">
-        <td><%= info.sleep_time %></td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="row">
+    <div class="col-md-3">
+      <h3 class="info_h3">Diapers</h3>
+      <table class="table table-stripe">
+        <thead>
+          <th>Morning </th>
+          <th>Noon </th>
+          <th>Afternoon </th>
+        </thead>
+        <tbody>
+          <tr class="success">
+            <td><%= info.diaper_m %></td>
+            <td><%= info.diaper_n %></td>
+            <td><%= info.diaper_a %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-3">
+      <h3 class="info_h3">Meals</h3>
+      <table class="table table-stripe">
+        <thead>
+          <th> Morning </th>
+          <th> Noon </th>
+          <th> Afternoon</th>
+        </thead>
+        <tbody>
+          <tr class="warning">
+            <td><%= info.breakfast %></td>
+            <td><%= info.lunch %></td>
+            <td><%= info.afternoon %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-3">
+      <h3 class="info_h3">General Info</h3>
+      <br>
+      <table class="table table-stripe">
+        <thead>
+          <th></th>
+        </thead>
+        <tbody>
+          <tr class="info">
+            <td><%= info.general %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-3">
+      <h3 class="info_h3">Sleep time</h3>
+      <br>
+      <table class="table table-stripe">
+        <thead>
+          <th></th>
+        </thead>
+        <tbody>
+          <tr class="active">
+            <td><%= info.sleep_time %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
   <% if info.more_daiper || info.more_wipes || info.more_clothes %>
     <h3 class="info_h3">More Of</h3>
     <% if info.more_clothes %>
