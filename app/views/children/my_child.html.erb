@@ -1,3 +1,22 @@
-<h1><%= @child.name %>'s photo: </h1>
-<h3> <%= link_to "Add Photo", edit_my_child_path(@child.id, :parent_id => @parent.id) %> </h3>
-<%= image_tag @child.avatar.url(:square) %>
+<h1 class="middle-name"><%= positive_adjectives %> <%= @child.name %> </h1>
+<br>
+<br>
+<br>
+<br>
+
+<div class="row">
+  <div class="col-md-6">
+    <!-- <h3> <%= link_to "Add Photo", edit_child_path(@child.id) %> </h3> -->
+    <div class="image-right">
+      <%= image_tag @child.avatar.url(:square) %>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h2 style="font-family: 'Josefin Sans', serif;">Parents names: <stuff-big><%= @parent.name %></stuff-big></h2>
+    <h2 style="font-family: 'Josefin Sans', serif;">Phone number 1: <stuff-big><%= @parent.phone_number1 %></stuff-big></h2>
+    <% if !@parent.phone_number2.nil? %>
+      <h2 style="font-family: 'Josefin Sans', serif;">Phone number 2: <stuff-big><%= @parent.phone_number2 %></stuff-big></h2>
+    <% end %>
+    <h2 style="font-family: 'Josefin Sans', serif;">Email: <stuff-big><%= @parent.email %></stuff-big></h2>
+  </div>
+</div>
