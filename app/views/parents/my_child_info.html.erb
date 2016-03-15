@@ -2,8 +2,8 @@
 <h1 class="form_h2"> <%= @child.name %>'s Data History</h1>
 <br>
 <br>
-<% @infos.reverse.each do |info| %>
-  <h2 style="font-family: 'Josefin Sans', serif;">Daily Information for: <stuff-big><%= info.created_at.strftime('%D') %></stuff-big></h2>
+<% @infos.each do |info| %>
+  <h2 style="font-family: 'Josefin Sans', serif;">Daily Information: <stuff-big><%= info.created_at.strftime('%D') %></stuff-big></h2>
 <div class="border">
   <div class="row">
     <div class="col-md-3">
