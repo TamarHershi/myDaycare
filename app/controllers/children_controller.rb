@@ -11,8 +11,13 @@ class ChildrenController < ApplicationController
 
   def edit
     @child = Child.find(params[:id])
+  end
+
+  def edit_my_child
+    @child = Child.find(params[:id])
     @parent = Parent.find(params[:parent_id])
   end
+
 
   def attend
     @child = Child.find(params[:id])
@@ -28,11 +33,11 @@ class ChildrenController < ApplicationController
 
   def update
     @child = Child.find(params[:id])
-    @parent = Parent.find(params[:parent_id])
+    @parent = Parent.find(params[:parent_id]) if !params[:parent_id].nil?
     @child.update(child_params)
     if @child.save
       if !@parent.nil?
-        redirect_to child_path(@child.id, :parent_id => @parent.id)
+        redirect_to my_children_path(@parent)
       else
         redirect_to user_child_path(@current_user.id, @child.id)
       end
@@ -51,6 +56,10 @@ class ChildrenController < ApplicationController
   end
 
   def show
+    @child = Child.find(params[:id])
+  end
+
+  def my_child
     @child = Child.find(params[:id])
     @parent = Parent.find(params[:parent_id])
   end

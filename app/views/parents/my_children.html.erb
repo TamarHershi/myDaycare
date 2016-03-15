@@ -2,7 +2,7 @@
 <div class="row">
   <% @children.each do |child| %>
     <div class="col-md-4">
-      <div class= "child-name child-details"><%= link_to child.name, child_path(child.id ,:parent_id => @parent.id) %></div>
+      <div class= "child-name child-details"><%= link_to child.name, my_child_path(child.id ,:parent_id => @parent.id) %></div>
       <% info = child.infos.last %>
       <br>
       <% info = child.infos.last %>

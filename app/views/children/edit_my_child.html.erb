@@ -19,6 +19,7 @@
     <%= f.label :avatar %>
     <%= f.file_field :avatar %>
   </div>
+  <%= hidden_field_tag(:parent_id, @parent.id) %>
     <%= f.submit 'Save the info' %>
     <!-- <%= link_to 'Nevermind', children_path, class: 'button' %> -->
   </div>

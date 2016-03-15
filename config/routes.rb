@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get '/infos/new_forms' => "infos#new_forms", as: :new_forms
   post '/children/email' => "children#send_emails", as: :send_emails
   post '/children/:id/attend' => "children#attend", as: :attend
+  get '/children/:id/my_child' => "children#my_child", as: :my_child
+  get '/children/:id/edit_my_child' => "children#edit_my_child", as: :edit_my_child
   post '/children/sms' => "children#send_text_message", as: :send_text_message
   resources :sessions, except: [:update, :destroy]
   resources :infos, except: [:destroy]
