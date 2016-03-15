@@ -1,7 +1,7 @@
 <%= form_for @info, :html => {:class => "form-group" } do |f| %>
 <br>
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-4">
     <h2 class="form_h2">Diapers</h2>
     <div class="field">
       <h3 class="h3_form"> Morning <small>Diaper</small></h3>
@@ -37,7 +37,7 @@
     </div>
     <br>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-4">
     <h2 class="form_h2">Food</h2>
     <div class="field">
       <h3 class="h3_form"> Breakfast <small> /snack </small></h3>
@@ -77,13 +77,8 @@
         <%= f.label 'All', :class => "button" %>
         <%= f.radio_button :afternoon, 'all' %>
     </div>
-    <br>
   </div>
-</div>
-    <br>
-    <br>
-    <!-- <%= f.submit value: "Add info", class: "btn btn-success" %> -->
-    <br>
+  <div class="col-md-4">
     <h2 class="form_h2">More of</h2>
     <div class="field">
         <%= f.label "More diapres" %>
@@ -94,19 +89,17 @@
         <%= f.check_box :more_clothes %>
     </div>
     <br>
-    <br>
     <div class="field">
       <%= f.label "Sleep time" %>:
       <%= f.text_field :sleep_time, class: "form-control box", rows: "10" %><br />
-      <br>
     </div>
     <div class="field">
       <%= f.label "General Information" %>:
       <%= f.text_field :general, class: "form-control box", id: "g_box" %><br />
       <br>
     </div>
-
-
+  </div>
+</div>
       <%= f.submit value: "Add info", class: "btn btn-success" %>
 
 <% end %>
