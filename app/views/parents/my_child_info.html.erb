@@ -1,5 +1,6 @@
 <br>
-<h1 class="form_h2"> <%= @child.name %>'s Data History</h1>
+<h1 style="font-family: 'Josefin Sans', serif;"> <%= link_to @child.name, my_child_path(@child.id, :parent_id => @parent.id)%> <small>Info History</h1></small>
+
 <br>
 <br>
 <% @infos.each do |info| %>
