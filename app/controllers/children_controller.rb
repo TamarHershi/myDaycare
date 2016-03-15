@@ -57,6 +57,7 @@ class ChildrenController < ApplicationController
 
   def show
     @child = Child.find(params[:id])
+    @parent = @child.parent
   end
 
   def my_child

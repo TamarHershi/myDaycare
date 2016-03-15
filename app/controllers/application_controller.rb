@@ -4,9 +4,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user
   helper_method :parent
+  helper_method :positive_adjectives
   before_action :require_login
   before_action :current_user
 
+  def positive_adjectives
+    words = ["Creative", "Funny", "Kind", "Nice", "Loving", "Sweet", "Adorable"]
+    return words[rand(words.length-1)]
+  end
 
   def current_user
    @current_user ||= User.find(session[:user_id]) if session[:user_id]
