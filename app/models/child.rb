@@ -28,6 +28,7 @@ class Child < ActiveRecord::Base
     t_child = children.first
     children.each do |child|
       t_child = child if child.room.tuition > high
+      high = child.room.tuition
     end
     return t_child
   end
