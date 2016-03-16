@@ -19,7 +19,8 @@
       <h2 style="font-family: 'Josefin Sans', serif;">Phone number 2: <stuff><%= @parent.phone_number2 %></stuff></h2>
     <% end %>
     <h2 style="font-family: 'Josefin Sans', serif;">Email: <stuff><%= @parent.email %></stuff></h2>
+    <br>
+    <%= button_to "Edit Info", edit_parent_path(@parent.id), params: {:child_id => @child.id}, :method => :get, class:"btn btn-info left-side" %>
   </div>
 </div>
-<%= button_to "Edit Info", edit_parent_path(@parent.id), params: {:child_id => @child.id}, :method => :get, class:"btn btn-info" %>
 <%= link_to "Add Photo", edit_my_child_path(@child.id, :parent_id => @parent.id) %>
