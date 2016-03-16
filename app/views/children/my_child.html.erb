@@ -1,4 +1,4 @@
-<h1 class="middle-name"><%= positive_adjectives %> <%= @child.name %> </h1>
+<h1 class="middle-name"> <%= @child.name %> </h1>
 <br>
 <br>
 <br>
@@ -12,13 +12,14 @@
     </div>
   </div>
   <div class="col-md-6">
-    <h2 style="font-family: 'Josefin Sans', serif;">Parents names: <stuff-big><%= @parent.name %></stuff-big></h2>
-    <h2 style="font-family: 'Josefin Sans', serif;">Phone number 1: <stuff-big><%= @parent.phone_number1 %></stuff-big></h2>
+    <h2 style="font-family: 'Josefin Sans', serif;">Parents names: <stuff><%= @child.parents_names %></stuff></h2>
+    <h2 style="font-family: 'Josefin Sans', serif;">Address: <stuff><%= @parent.address%></stuff></h2>
+    <h2 style="font-family: 'Josefin Sans', serif;">Phone number 1: <stuff><%= @parent.phone_number1 %></stuff></h2>
     <% if !@parent.phone_number2.nil? %>
-      <h2 style="font-family: 'Josefin Sans', serif;">Phone number 2: <stuff-big><%= @parent.phone_number2 %></stuff-big></h2>
+      <h2 style="font-family: 'Josefin Sans', serif;">Phone number 2: <stuff><%= @parent.phone_number2 %></stuff></h2>
     <% end %>
-    <h2 style="font-family: 'Josefin Sans', serif;">Email: <stuff-big><%= @parent.email %></stuff-big></h2>
+    <h2 style="font-family: 'Josefin Sans', serif;">Email: <stuff><%= @parent.email %></stuff></h2>
   </div>
 </div>
-
+<%= button_to "Edit Info", edit_parent_path(@parent.id), params: {:child_id => @child.id}, :method => :get, class:"btn btn-info" %>
 <%= link_to "Add Photo", edit_my_child_path(@child.id, :parent_id => @parent.id) %>

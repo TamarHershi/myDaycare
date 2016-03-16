@@ -18,6 +18,22 @@ class ParentsController < ApplicationController
     @infos = @child.infos
   end
 
+  def edit
+    @parent = Parent.find(params[:id])
+    @child = Child.find(params[:child_id])
+
+  end
+
+  def update
+    @parent = Parent.find(params[:id])
+    @child = Child.find(params[:child_id])
+    if @parent.update(parent_params)
+      redirect_to my_child_info(@parent.id, @child.id)
+    else
+      render :edit
+    end
+  end
+
   def pay_tuition
     @parent = Parent.find(params[:id])
     @children = @parent.children
@@ -26,6 +42,12 @@ class ParentsController < ApplicationController
     @current_month = @months[month]
     @current_year = DateTime.now.strftime('%Y')
   end
+
+  private
+
+    def parent_params
+      params.require(:parent).permit(:name, :email, :phone_number1, :last_name, :address)
+    end
 
 
 end
