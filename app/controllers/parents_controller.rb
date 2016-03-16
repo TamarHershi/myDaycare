@@ -26,9 +26,9 @@ class ParentsController < ApplicationController
 
   def update
     @parent = Parent.find(params[:id])
-    @child = Child.find(params[:child_id])
+    @child = Child.find(params[:parent][:child_id])
     if @parent.update(parent_params)
-      redirect_to my_child_info(@parent.id, @child.id)
+      redirect_to my_child_path(@child.id, parent_id: @parent.id )
     else
       render :edit
     end
