@@ -1,10 +1,10 @@
 <br>
-<h1 style="font-family: 'Josefin Sans', serif;"> <%= link_to @child.name, my_child_path(@child.id, :parent_id => @parent.id)%> <small>Info History</h1></small>
+<h1 style="font-family: 'Josefin Sans', serif;"> <%= link_to @child.name, my_child_path(@child.id, :parent_id => @parent.id)%> <small>Daily Information History</h1></small>
 
 <br>
 <br>
 <% @infos.each do |info| %>
-  <h2 style="font-family: 'Josefin Sans', serif;">Daily Information: <stuff-big><%= info.created_at.strftime('%D') %></stuff-big></h2>
+  <h2 style="font-family: 'Josefin Sans', serif;"> <stuff-big><%= info.created_at.strftime('%D') %></stuff-big></h2>
 <div class="border">
   <div class="row">
     <div class="col-md-3">
