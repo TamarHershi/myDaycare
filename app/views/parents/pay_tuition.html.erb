@@ -51,7 +51,7 @@
           <% else %>
             <td> none </td>
           <% end %>
-          <td>$<%= @amount/100 %></td>
+          <td  style="font-size:20px;">$<%= @amount/100 %></td>
           <% if !@child.paid? %>
             <td> <%= render "charges/form", :parent => @parent, :child => @children.last, :amount => @children.last.room.tuition %></td>
           <% else %>
