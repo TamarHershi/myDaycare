@@ -1,5 +1,5 @@
 #Capstone Product Plan
-##Problem Statement <br />
+##Problem Statement <br/>
 Currently, most of the daycare teachers are using pen and paper to update the parents with the daily info for each child, so in the end of day the parent gets a note that summaries that info (how much the child slept / eat/ wet diapers / and whether the parent should bring more diapers/ wipes/ changing cloths for school) <br>
 The parent could easily lose the paper, forget it in the car, and not remember to bring diapers/wipes to school - since they not always read the whole thing.  <br>
 •	Forgotten Baby Syndrome: Every year around 20 children have died from heat stroke in a car. <br>Currently daycares won’t contact the parents if the child hasn’t arrived to school, they’ll assume the child is sick <br>
